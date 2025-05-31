@@ -7,7 +7,7 @@ function UserPage() {
   const user = useSelector((store) => store.user);
   return (
     <div className="container">
-      Hello Medi Grove. Testing git branch commands. Test.
+      Hello Medi Grove.
       <h2>Welcome, {user.username}!</h2>
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />
