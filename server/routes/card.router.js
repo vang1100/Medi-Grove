@@ -25,7 +25,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     const query = `
-    SELECT * FROM "cards"
+    SELECT * FROM "card"
     `;
 
     pool.query(query)
