@@ -6,7 +6,8 @@ function * fetchCard() {
 
     try {
 
-        const cardResponse = yield axios.get(`/api/cards`)
+        const cardResponse = yield axios.get(`/api/cards`);
+        console.log('get card response', cardResponse);
         yield put({
             type: 'SET_CARD',
             payload: cardResponse.data
