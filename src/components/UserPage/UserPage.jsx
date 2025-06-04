@@ -1,8 +1,16 @@
-import React from 'react';
+import {React, useEffect, useState} from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import axios from 'axios';
 
 function UserPage() {
+
+  const dispatch = useDispatch();
+
+  useEffect (() => {
+    console.log('testing');
+    dispatch({type: 'FETCH_CARD'});
+  })
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
   return (
