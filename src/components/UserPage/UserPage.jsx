@@ -39,8 +39,9 @@ function UserPage() {
      }))} */}
 
       
-      Hello Medi Grove....Test
-      <h2>Welcome, {user.username}!</h2>
+      <h4>Hello Medi Grove....Under construction....</h4>
+      <br/>
+      Welcome, {user.username}!
       <p>Your ID is: {user.id}</p>
       
       <LogOutButton className="btn" />
