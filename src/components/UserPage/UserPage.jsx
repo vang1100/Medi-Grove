@@ -9,7 +9,8 @@ function UserPage() {
 
   useEffect (() => {
    //console.log('testing');
-    dispatch({type: 'FETCH_CARD'})
+    dispatch({type: 'FETCH_CARD'});
+    dispatch({type: 'FETCH_CATE'});
   }, [])
 
   // this component doesn't do much to start, just renders some user reducer info to the DOM
