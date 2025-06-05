@@ -2,7 +2,6 @@ import {React, useEffect, useState} from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
 import axios from 'axios';
-import cardReducer from '../../redux/reducers/card.reducer';
 
 function UserPage() {
 
@@ -21,7 +20,7 @@ function UserPage() {
   return (
     <div className="container">
      
-     {card.map((card => {
+     {/* {card.map((card => {
       return (
         <li key={card.id}>
           
@@ -36,12 +35,13 @@ function UserPage() {
 
         </li>
       )
-     }))}
+     }))} */}
 
       
       Hello Medi Grove....Test
       <h2>Welcome, {user.username}!</h2>
       <p>Your ID is: {user.id}</p>
+      
       <LogOutButton className="btn" />
       
     </div>
