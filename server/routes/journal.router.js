@@ -5,9 +5,16 @@ const router = express.Router();
 
 // get route for journal by user.id
 
-router.get('/:user_id', (req, res) => {
+const ensureAuthenticated = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.status(401).send('Unauthorized');
+};
 
-  // To ensure that only the logged-in user can access their own books
+router.get('/:user_id', ensureAuthenticated, (req, res) => {
+
+  // To ensure that only the logged-in user can access their own journal
   
   if (parseInt(req.params.user_id) !== req.user.id) {
     return res.status(403).send('Forbidden');
