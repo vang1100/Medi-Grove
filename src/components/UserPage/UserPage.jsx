@@ -11,6 +11,7 @@ function UserPage() {
    //console.log('testing');
     dispatch({type: 'FETCH_CARD'});
     dispatch({type: 'FETCH_CATE'});
+    dispatch({type: 'FETCH_JOURNAL'});
   }, [])
 
   // this component doesn't do much to start, just renders some user reducer info to the DOM
