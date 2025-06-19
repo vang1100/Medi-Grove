@@ -2,6 +2,7 @@ import {React, useEffect, useState} from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function UserPage() {
 
@@ -40,11 +41,40 @@ function UserPage() {
      }))} */}
 
       
-      <h4>Hello Medi Grove....Under construction....</h4>
+      <h2 style={{color: 'red'}}>....Under construction....</h2>
       <br/>
       Welcome, {user.username}!
       <p>Your ID is: {user.id}</p>
+
+      <h3>Pick a card below</h3>
+
+     <Link to="/category-one-walking-thoughts">
+     Walking Thoughts
+     </Link> 
+
+     <br/>
+      <br/>
+
+     <Link to="/category-two-affirmations">
+     Affirmations
+     </Link>
+
+     <br/>
+      <br/>
+
+     <Link to="/category-three-tea-meditation">
+     Tea Meditation
+     </Link>
+
+     <br/>
+      <br/>
+
+     <Link to="/category-four-earth-messages">
+     Earth's Messages
+     </Link>
       
+      <br/>
+      <br/>
       <LogOutButton className="btn" />
       
     </div>

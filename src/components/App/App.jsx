@@ -19,6 +19,10 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import CategoryOne from '../CategoryOne/CategoryOne';
+import CategoryTwo from '../CategoryTwo/CategoryTwo';
+import CategoryFour from '../CategoryFour/CategoryFour';
+import CategoryThree from '../CategoryThree/CategoryThree';
 
 import './App.css';
 
@@ -59,6 +63,38 @@ function App() {
           >
             <UserPage />
           </ProtectedRoute>
+
+            <Route
+              exact 
+              patch="/category-one-walking-thoughts">
+
+              <CategoryOne/>
+
+            </Route>
+
+            <Route
+              exact 
+              patch="/category-two-affirmations">
+
+              <CategoryTwo/>
+
+            </Route>
+
+            <Route
+              exact 
+              patch="/category-three-tea-meditation">
+
+              <CategoryThree/>
+
+            </Route>
+
+            <Route
+              exact 
+              patch="/category-four-earth-messages">
+
+              <CategoryFour/>
+
+            </Route>
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
