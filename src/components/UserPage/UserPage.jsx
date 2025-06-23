@@ -49,28 +49,31 @@ function UserPage() {
       <h3>Pick a card below</h3>
 
      <Link to="/category-one-walking-thoughts">
-     Walking Thoughts
+      <img src="walking-thoughts.png" />
+     
      </Link> 
+
+  
 
      <br/>
       <br/>
 
      <Link to="/category-two-affirmations">
-     Affirmations
+     <img src="affirmations.png"/>
      </Link>
 
      <br/>
       <br/>
 
      <Link to="/category-three-tea-meditation">
-     Tea Meditation
+      <img src="tea-meditation.png"/>
      </Link>
 
      <br/>
       <br/>
 
      <Link to="/category-four-earth-messages">
-     Earth's Messages
+      <img src="earths-messages.png"/>
      </Link>
       
       <br/>
