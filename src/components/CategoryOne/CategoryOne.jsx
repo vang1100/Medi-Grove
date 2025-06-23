@@ -13,25 +13,20 @@ function CategoryOne() {
 
     const card = useSelector((store) =>store.cardReducer);
 
+    const [randomCard, setRandomCard] = useState();
+
+    const fetchRandomCard = () => {
+        console.log('a random card will display when I press this button!');
+    }
+
     return (
         <>
-        Random card will populate.
+      
 
-        {JSON.stringify(card)}
 
-            
-            {/* {card.map((categoryone) => {
 
-                return (
-                    <li key={categoryone.id}>
-
-                        {categoryone.name}
-
-                    </li>
-                )
-
-            })} */}
-
+  
+    <center><button onClick={fetchRandomCard}>Generate Card</button> </center>
          <ul>
              {Array.isArray(card) &&
                 card

@@ -8,5 +8,5 @@ Journal
 
 CSS
 1. color pallete
-2. photos
+2. photos ✅
 
