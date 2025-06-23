@@ -18,7 +18,36 @@ function CategoryOne() {
         Random card will populate.
 
         {JSON.stringify(card)}
+
+            
+            {/* {card.map((categoryone) => {
+
+                return (
+                    <li key={categoryone.id}>
+
+                        {categoryone.name}
+
+                    </li>
+                )
+
+            })} */}
+
+         <ul>
+             {Array.isArray(card) &&
+                card
+                 .filter(categoryone => categoryone.category_id === 1)
+                .map(categoryone => (
+                 <li key={categoryone.id}>
+                     <h3>{categoryone.name}</h3>
+                    <p>{categoryone.description}</p>
+                </li>
+                                ))}
+        </ul>
+        
+        <center><button>Home Page</button> </center>
+
         </>
+        
     )
 }
 
