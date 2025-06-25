@@ -1,7 +1,7 @@
 function CategoryTwo(){
     return (
         <>
-        Random card for category two</>
+        Random card for category two.....</>
     )
 }
 

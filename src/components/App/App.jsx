@@ -64,21 +64,21 @@ function App() {
             <UserPage />
           </ProtectedRoute>
 
-            <Route
+            <ProtectedRoute
               exact 
               patch="/category-one-walking-thoughts">
 
               <CategoryOne/>
 
-            </Route>
+            </ProtectedRoute>
 
-            <Route
+            <ProtectedRoute
               exact 
               patch="/category-two-affirmations">
 
               <CategoryTwo/>
 
-            </Route>
+            </ProtectedRoute>
 
             <Route
               exact 

@@ -24,9 +24,9 @@ function CategoryOne() {
       
 
 
-
+category one
   
-    <center><button onClick={fetchRandomCard}>Generate Card</button> </center>
+    {/* <center><button onClick={fetchRandomCard}>Generate Card</button> </center>
          <ul>
              {Array.isArray(card) &&
                 card
@@ -39,7 +39,7 @@ function CategoryOne() {
                                 ))}
         </ul>
         
-        <center><button>Home Page</button> </center>
+        <center><button>Home Page</button> </center> */}
 
         </>
         
