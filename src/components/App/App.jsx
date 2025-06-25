@@ -38,10 +38,15 @@ function App() {
   return (
     <Router>
       <div>
+        
         <Nav />
         <Switch>
+
+          
           {/* Visiting localhost:5173 will redirect to localhost:5173/home */}
           <Redirect exact from="/" to="/home" />
+
+          
 
           {/* Visiting localhost:5173/about will show the about page. */}
           <Route
@@ -64,37 +69,6 @@ function App() {
             <UserPage />
           </ProtectedRoute>
 
-            <ProtectedRoute
-              exact 
-              patch="/category-one-walking-thoughts">
-
-              <CategoryOne/>
-
-            </ProtectedRoute>
-
-            <ProtectedRoute
-              exact 
-              patch="/category-two-affirmations">
-
-              <CategoryTwo/>
-
-            </ProtectedRoute>
-
-            <Route
-              exact 
-              patch="/category-three-tea-meditation">
-
-              <CategoryThree/>
-
-            </Route>
-
-            <Route
-              exact 
-              patch="/category-four-earth-messages">
-
-              <CategoryFour/>
-
-            </Route>
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
@@ -146,13 +120,54 @@ function App() {
             }
           </Route>
 
+   <ProtectedRoute
+              exact 
+              path="/category-one-walking-thoughts">
+
+              <CategoryOne/>
+
+               </ProtectedRoute>
+
+
+    <ProtectedRoute
+              exact 
+              path="/category-two-affirmations">
+
+              <CategoryTwo/>
+
+            </ProtectedRoute>
+ 
+
+            
+
+            <Route
+              exact 
+              path="/category-three-tea-meditation">
+
+              <CategoryThree/>
+
+            </Route>
+
+            <Route
+              exact 
+              path="/category-four-earth-messages">
+
+              <CategoryFour/>
+
+            </Route>
+
+          
+
           {/* If none of the other routes matched, we will show a 404. */}
+
+          
           <Route>
             <h1>404</h1>
           </Route>
         </Switch>
         <Footer />
       </div>
+      
     </Router>
   );
 }

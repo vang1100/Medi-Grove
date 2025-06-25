@@ -22,11 +22,8 @@ function CategoryOne() {
     return (
         <>
       
-
-
-category one
   
-    {/* <center><button onClick={fetchRandomCard}>Generate Card</button> </center>
+    <center><button onClick={fetchRandomCard}>Generate Card</button> </center>
          <ul>
              {Array.isArray(card) &&
                 card
@@ -39,7 +36,7 @@ category one
                                 ))}
         </ul>
         
-        <center><button>Home Page</button> </center> */}
+        <center><button>Home Page</button> </center>
 
         </>
         
