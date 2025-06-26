@@ -22,8 +22,66 @@ function UserPage() {
   
   return (
     <div className="container">
-     
-     {/* {card.map((card => {
+
+      
+            <p style={{color: 'red'}}>....Under <strong>construction</strong>....</p>
+      
+    <br/>
+      
+            Welcome, {user.username}!
+            
+            <p>Your ID is: {user.id}</p>
+
+            <h3>Pick a card below</h3>
+
+
+          <Link to="/category-one-walking-thoughts">
+        
+          < img src="walking-thoughts.png" />
+        
+        </Link> 
+
+    <br/>
+    <br/>
+
+          <Link to="/category-two-affirmations">
+            
+            <img src="affirmations.png"/>
+          
+          </Link>
+
+    <br/>
+    <br/>
+
+          <Link to="/category-three-tea-meditation">
+            
+            <img src="tea-meditation.png"/>
+
+          </Link>
+
+    <br/>
+    <br/>
+
+        <Link to="/category-four-earth-messages">
+          
+          <img src="earths-messages.png"/>
+        
+        </Link>
+      
+    <br/>
+  <br/>
+
+
+      <LogOutButton className="btn" />
+      
+    </div>
+  );
+}
+
+// this allows us to use <App /> in index.js
+export default UserPage;
+
+  {/* {card.map((card => {
       return (
         <li key={card.id}>
           
@@ -39,50 +97,3 @@ function UserPage() {
         </li>
       )
      }))} */}
-
-      
-      <h2 style={{color: 'red'}}>....Under construction....</h2>
-      <br/>
-      Welcome, {user.username}!
-      <p>Your ID is: {user.id}</p>
-
-      <h3>Pick a card below</h3>
-
-     <Link to="/category-one-walking-thoughts">
-      <img src="walking-thoughts.png" />
-     
-     </Link> 
-
-  
-
-     <br/>
-      <br/>
-
-     <Link to="/category-two-affirmations">
-     <img src="affirmations.png"/>
-     </Link>
-
-     <br/>
-      <br/>
-
-     <Link to="/category-three-tea-meditation">
-      <img src="tea-meditation.png"/>
-     </Link>
-
-     <br/>
-      <br/>
-
-     <Link to="/category-four-earth-messages">
-      <img src="earths-messages.png"/>
-     </Link>
-      
-      <br/>
-      <br/>
-      <LogOutButton className="btn" />
-      
-    </div>
-  );
-}
-
-// this allows us to use <App /> in index.js
-export default UserPage;

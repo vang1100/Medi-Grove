@@ -6,12 +6,11 @@ function CategoryOne() {
 
     const dispatch = useDispatch();
 
-
     useEffect(() =>
     {
         dispatch({type: 'FETCH_CARD' });
     }, 
-    [])
+        [])
 
     const card = useSelector((store) =>store.cardReducer);
 
@@ -20,15 +19,23 @@ function CategoryOne() {
     const fetchRandomCard = () => {
         console.log('a random card will display when I press this button!');
 
-         const filtered = Array.isArray(card)
+        const filtered = Array.isArray(card)
+
       ? card.filter(categoryone => categoryone.category_id === 1)
+
       : [];
+
     if (filtered.length > 0) {
-      const randomIndex = Math.floor(Math.random() * filtered.length);
-      setRandomCard(filtered[randomIndex]);
+
+        const randomIndex = Math.floor(Math.random() * filtered.length);
+
+        setRandomCard(filtered[randomIndex]);
+
     } else {
-      setRandomCard(null);
+
+        setRandomCard(null);
     }
+    
     }
 
     return (
@@ -45,8 +52,19 @@ function CategoryOne() {
           </li>
         )}
       </ul>
-      
-         {/* <ul>
+
+        
+        
+        <center><Link to="/user"><button>Home Page</button></Link> </center>
+
+        </>
+        
+    )
+}
+
+export default CategoryOne;
+
+ {/* <ul>
              {Array.isArray(card) &&
                 card
                  .filter(categoryone => categoryone.category_id === 1)
@@ -57,12 +75,3 @@ function CategoryOne() {
                 </li>
                                 ))}
         </ul> */}
-        
-        <center><Link to="/user"><button>Home Page</button></Link> </center>
-
-        </>
-        
-    )
-}
-
-export default CategoryOne;
