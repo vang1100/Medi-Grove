@@ -19,24 +19,44 @@ function CategoryTwo() {
 
     const fetchRandomCard = () => {
 
+        // three operands: 
+                // a condition followed by a question mark (?), 
+                // then an expression to execute if the condition is truthy followed by a colon (:), 
+                // and finally the expression to execute if the condition is falsy
+        // ====> if card is an array, 
+        //      then filter through and find the category where it equals 2
+        //         if not an array, then return an empty array? undefined array?
+
        // console.log('a random card will display when I press this button!');
 
-        const filtered = Array.isArray(card)
+        const filteredArray = Array.isArray(card)
 
-        // if card is an array
+        // The Array.isArray() method will pass through the const card and it will check if it's an array
 
-      ? card.filter(categoryone => categoryone.category_id === 2)
+      ? card.filter(cardItem => cardItem.category_id === 2)
+                    // card.filter(function(categoryone) {
+                // For each object in the 'card' array, check if its category_id is 2
+                    //   if (categoryone.category_id === 2) {
+                    //     // If true, include this object in the new array
+                    //     return true;
+                    //   } else {
+                    //     // If false, exclude it
+                    //     return false;
+                    //   }
+                    // });
 
-      // then filter where category_id is equal to 2. and if not an array, return an empty array
+
+      //  and if not an array, return an empty array
       : [];
 
-    if (filtered.length > 0) {
+      
+    if (filteredArray.length > 0) {
 
-        const randomIndex = Math.floor(Math.random() * filtered.length);
+        const randomIndex = Math.floor(Math.random() * filteredArray.length);
 
-         console.log('random card', filtered[randomIndex])
+         console.log('random card', filteredArray[randomIndex])
 
-        setRandomCard(filtered[randomIndex]);
+        setRandomCard(filteredArray[randomIndex]);
 
     } else {
 
