@@ -9,9 +9,9 @@ function* fetchJournal(action) {
 
     // console.log('journalResponse:', journalResponse);
 
-    const user_id = action.payload;
+     const user = yield select(state => state.user); // Adjust to your 
     
-    const journalResponse = yield axios.get(`/api/journal/${user_id}`);
+    const journalResponse = yield axios.get(`/api/journal/${user.id}`);
 
     yield put({ 
       type: 'SET_JOURNAL', 
