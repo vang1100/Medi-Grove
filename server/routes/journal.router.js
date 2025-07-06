@@ -44,11 +44,11 @@ router.post('/', ensureAuthenticated, (req, res) => {
 
   // To ensure that only the logged-in user can access their own journal
   
-  if (parseInt(req.params.user_id) !== req.user.id) {
-    return res.status(403).send('Forbidden');
-  }
+  // if (parseInt(req.params.user_id) !== req.user.id) {
+  //   return res.status(403).send('Forbidden');
+  // }
 
-    const user_id = req.params.user_id;
+    const user_id = req.user.id;
     const title = req.body.title;
     const text = req.body.text;
 
@@ -56,22 +56,24 @@ router.post('/', ensureAuthenticated, (req, res) => {
    
               INSERT INTO "journal"
 
-                ("title", "text")
+                ("user_id", "title", "text")
                 
               VALUES
 
-                ($1, $2);
+                ($1, $2, $3)
+
+                RETURNING *;
 
     `;
 
-    pool.query(queryText, [user_id, title, text])
+      pool.query(queryText, [user_id, title, text])
     .then((result) => {
-      res.send(201);
+      res.status(201).send(result.rows[0]); // Send back the new journal entry
     })
     .catch((error) => {
-      console.log('error in queryText', error);
+      console.log('error in journal POST:', error);
       res.sendStatus(500);
-    })
+    });
 });
 
 // DELETE ROUTE
