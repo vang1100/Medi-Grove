@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { put, takeEvery, select } from 'redux-saga/effects';
 
-function* fetchJournal(action) {
+function* fetchJournal() {
   
  try {
 
@@ -18,7 +18,7 @@ function* fetchJournal(action) {
      // here I am using the function to grab the stae of the user redux. and i assigned it with the varible
             // called user
     
-    const journalResponse = yield axios.get(`/api/journal/${user.id}`);
+    const journalResponse = yield axios.get(`/api/journal/`);
 
       // here we are grabbing from the user.id (property)
     yield put({ 
