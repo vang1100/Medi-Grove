@@ -73,7 +73,33 @@ router.post('/', ensureAuthenticated, (req, res) => {
 });
 
 // DELETE ROUTE
+router.delete('/:id', ensureAuthenticated, (req, res) => {
 
+  // To ensure that only the logged-in user can access their own journal
+  
+  // if (parseInt(req.params.user_id) !== req.user.id) {
+  //   return res.status(403).send('Forbidden');
+  // }
+
+    const deleteId = req.params.id
+
+    const queryText = `
+   
+              DELETE FROM "journal"
+
+              WHERE "id" = $1;
+
+    `;
+
+      pool.query(queryText, [deleteId])
+    .then((result) => {
+      res.status(201).send(); // Send back the new journal entry
+    })
+    .catch((error) => {
+      console.log('error in journal POST:', error);
+      res.sendStatus(500);
+    });
+});
 // PUT ROUTE
 
 
