@@ -12,15 +12,11 @@ const ensureAuthenticated = (req, res, next) => {
   res.status(401).send('Unauthorized');
 };
 
-router.get('/:user_id', ensureAuthenticated, (req, res) => {
+router.get('/', ensureAuthenticated, (req, res) => {
 
   // To ensure that only the logged-in user can access their own journal
   
-  if (parseInt(req.params.user_id) !== req.user.id) {
-    return res.status(403).send('Forbidden');
-  }
-
-    const user_id = req.params.user_id;
+    const user_id = req.user.id;
 
     const queryText = `
    
