@@ -75,11 +75,6 @@ router.post('/', ensureAuthenticated, (req, res) => {
 // DELETE ROUTE
 router.delete('/:id', ensureAuthenticated, (req, res) => {
 
-  // To ensure that only the logged-in user can access their own journal
-  
-  // if (parseInt(req.params.user_id) !== req.user.id) {
-  //   return res.status(403).send('Forbidden');
-  // }
 
     const deleteId = req.params.id
 
@@ -93,7 +88,7 @@ router.delete('/:id', ensureAuthenticated, (req, res) => {
 
       pool.query(queryText, [deleteId])
     .then((result) => {
-      res.status(201).send(); // Send back the new journal entry
+      res.status(201).send(result.rows[0]); // Send back the new journal entry
     })
     .catch((error) => {
       console.log('error in journal POST:', error);
@@ -103,6 +98,27 @@ router.delete('/:id', ensureAuthenticated, (req, res) => {
 // PUT ROUTE
 
 
+router.put('/update/:id', ensureAuthenticated, (req, res) => {
 
+
+    const putId = req.params.id
+
+    const queryText = `
+   
+              UPDATE FROM "journal"
+
+              WHERE "id" = $1;
+
+    `;
+
+      pool.query(queryText, [putId])
+    .then((result) => {
+      res.status(201).send(); // Send back the new journal entry
+    })
+    .catch((error) => {
+      console.log('error in journal POST:', error);
+      res.sendStatus(500);
+    });
+});
 
 module.exports = router;
