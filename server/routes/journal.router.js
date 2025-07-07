@@ -98,20 +98,25 @@ router.delete('/:id', ensureAuthenticated, (req, res) => {
 // PUT ROUTE
 
 
-router.put('/update/:id', ensureAuthenticated, (req, res) => {
+router.put('/:id', ensureAuthenticated, (req, res) => {
 
 
     const putId = req.params.id
+    const title = req.body.title
+    const text = req.body.text
+   
 
     const queryText = `
    
-              UPDATE FROM "journal"
+              UPDATE  "journal"
 
-              WHERE "id" = $1;
+              SET "title" = $1, "text" = $2
+
+              WHERE "id" = $3;
 
     `;
 
-      pool.query(queryText, [putId])
+      pool.query(queryText, [title, text, putId])
     .then((result) => {
       res.status(201).send(); // Send back the new journal entry
     })
