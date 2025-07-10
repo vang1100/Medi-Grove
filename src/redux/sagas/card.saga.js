@@ -2,12 +2,10 @@ import axios from 'axios';
 import { put, takeEvery, takeLatest } from 'redux-saga/effects';
 
 function * fetchCard() {
-    console.log('fetch cards');
-
     try {
 
         const cardResponse = yield axios.get(`/api/cards`);
-        console.log('get card response', cardResponse);
+        console.log('get card data response', cardResponse.data);
         yield put({
             type: 'SET_CARD',
             payload: cardResponse.data

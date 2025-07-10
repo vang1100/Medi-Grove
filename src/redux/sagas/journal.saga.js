@@ -20,6 +20,8 @@ function* fetchJournal() {
     
     const journalResponse = yield axios.get(`/api/journal/`);
 
+    console.log('get journal response data', journalResponse.data);
+
       // here we are grabbing from the user.id (property)
     yield put({ 
       type: 'SET_JOURNAL', 

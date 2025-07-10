@@ -1,9 +1,9 @@
 const categoryReducer = (state ={}, action) => {
-     console.log('categoryReducer called with state:', state, 'and action:', action);
+    // console.log('categoryReducer called with state:', state, 'and action:', action);
   
      switch (action.type) {
        
-        case 'SET_CATE':
+        case 'SET_CATEG':
      
     //    console.log('SET_CATE  Payload:', action.payload);
 
