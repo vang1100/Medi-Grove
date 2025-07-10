@@ -12,15 +12,32 @@ function Journal () {
 
   
     const journal = useSelector((store)=>store.journalReducer);
-    
+
+    const deletePost = () => {
+        console.log('this button will delete the journal post');
+    }    
     return (
         <>
 
         This is the journal page!
-
-        {JSON.stringify(journal)}
+{/* 
+        {JSON.stringify(journal)} */}
 
          <center><Link to="/user"><button>Home Page</button></Link> </center>
+       
+
+        {journal.map((journal => {
+            return (
+                <li key={journal.id}>
+
+                    {journal.text}
+                    <button onClick={() => 
+                        dispatch
+                            ({type: 'DELETE_JOURNAL'})}>Delete text</button>
+
+                </li>
+            )
+        }))}
         </>
     )
 }
