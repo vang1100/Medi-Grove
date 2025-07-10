@@ -35,8 +35,34 @@ function* fetchJournal() {
   }
 }
 
+  
+
+
+function* deleteJournal(action) {
+try {
+
+    console.log('DELETE journal saga');
+
+    yield axios.delete(`/api/journal/${action.payload}`)
+
+    yield put({
+
+      type: 'FETCH_JOURNAL'
+    });
+
+  }catch(error){
+    console.log('error in deleteJournal', error)
+  }
+}
+
+function* updateJournal() {
+  
+}
+
 function* journalSaga() {
 yield takeEvery('FETCH_JOURNAL', fetchJournal)
+yield takeEvery('DELETE_JOURNAL', deleteJournal)
+
 }
 
 export default journalSaga;

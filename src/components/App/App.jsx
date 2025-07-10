@@ -23,6 +23,7 @@ import CategoryOne from '../CategoryOne/CategoryOne';
 import CategoryTwo from '../CategoryTwo/CategoryTwo';
 import CategoryFour from '../CategoryFour/CategoryFour';
 import CategoryThree from '../CategoryThree/CategoryThree';
+import Journal from '../Journal/Journal';
 
 import './App.css';
 
@@ -153,6 +154,14 @@ function App() {
               path="/category-four-earth-messages">
 
               <CategoryFour/>
+
+            </Route>
+
+            <Route
+            exact
+            path="/journal">
+
+              <Journal/>
 
             </Route>
 

@@ -21,9 +21,12 @@ function UserPage() {
 
   
   return (
+
+   
+
     <div className="container">
 
-      
+       {/* {JSON.stringify(card)} */}
             <p style={{color: 'red'}}>....Under <strong>construction</strong>....</p>
       
     <br/>
@@ -33,6 +36,12 @@ function UserPage() {
             <p>Your ID is: {user.id}</p>
 
             <h3>Pick a card below</h3>
+
+          <Link to="/journal">
+          <button>Go to user journal</button>
+          </Link>
+          
+          
 
 
           <Link to="/category-one-walking-thoughts">
