@@ -34,7 +34,7 @@ function Journal () {
                     <button onClick={() => 
                         dispatch
                             ({type: 'DELETE_JOURNAL',
-                            payload: event.id
+                            payload: journal.id
                             })}>Delete text</button>
 
                 </li>
