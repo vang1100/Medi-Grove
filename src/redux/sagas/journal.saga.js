@@ -55,7 +55,21 @@ try {
   }
 }
 
-function* updateJournal() {
+function* updateJournal(action) {
+  try {
+
+    console.log('edit journal saga');
+
+    yield axios.put(`/api/journal/${action.payload}`)
+
+    yield put({
+
+      type: 'FETCH_JOURNAL'
+    });
+
+  }catch(error){
+    console.log('error in deleteJournal', error)
+  }
   
 }
 

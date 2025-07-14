@@ -25,17 +25,24 @@ function Journal () {
 
          <center><Link to="/user"><button>Home Page</button></Link> </center>
        
-
+        <form>
+            <input></input> <input></input><button>Submit</button>
+        </form>
         {journal.map((journal => {
             return (
                 <li key={journal.id}>
 
-                    {journal.text}
+                  Title: 
+                  {journal.title} 
+                  <br/>
+                  {journal.text}
+                  <br/>
                     <button onClick={() => 
                         dispatch
                             ({type: 'DELETE_JOURNAL',
                             payload: journal.id
                             })}>Delete text</button>
+                    <button>Edit</button>
 
                 </li>
             )
