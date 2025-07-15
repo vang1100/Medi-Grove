@@ -19,7 +19,12 @@ function Journal () {
 
     const [journalPost, setJournalPost] = useState();
 
-    
+    const submit = (event) => {
+        event.preventDefault();
+        console.log('submit journal entry');
+    }
+
+
     return (
         <>
 
@@ -29,9 +34,12 @@ function Journal () {
 
          <center><Link to="/user"><button>Home Page</button></Link> </center>
        
-        <form>
-            <input></input> <input></input><button>Submit</button>
+        <form onSubmit={submit}>
+            <input placeholder="Title"></input>
+            <br/>
+            <input placeholder="Text" style={{ width: '200px', height: '100px' }}></input><button>Submit</button>
         </form>
+
         {Array.isArray(journal) &&  journal.map((journal => {
             return (
                 <li key={journal.id}>

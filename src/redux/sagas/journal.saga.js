@@ -55,23 +55,23 @@ try {
   }
 }
 
-function* updateJournal(action) {
-  try {
+// function* updateJournal(action) {
+//   try {
 
-    console.log('edit journal saga');
+//     console.log('edit journal saga');
 
-    yield axios.put(`/api/journal/${action.payload}`)
+//     yield axios.put(`/api/journal/${action.payload}`)
 
-    yield put({
+//     yield put({
 
-      type: 'FETCH_JOURNAL'
-    });
+//       type: 'FETCH_JOURNAL'
+//     });
 
-  }catch(error){
-    console.log('error in deleteJournal', error)
-  }
+//   }catch(error){
+//     console.log('error in deleteJournal', error)
+//   }
   
-}
+// }
 
 function* journalSaga() {
 yield takeEvery('FETCH_JOURNAL', fetchJournal)
