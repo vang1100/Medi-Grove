@@ -16,6 +16,10 @@ function Journal () {
     const deletePost = () => {
         console.log('this button will delete the journal post');
     }    
+
+    const [journalPost, setJournalPost] = useState();
+
+    
     return (
         <>
 
@@ -28,7 +32,7 @@ function Journal () {
         <form>
             <input></input> <input></input><button>Submit</button>
         </form>
-        {journal.map((journal => {
+        {Array.isArray(journal) &&  journal.map((journal => {
             return (
                 <li key={journal.id}>
 
