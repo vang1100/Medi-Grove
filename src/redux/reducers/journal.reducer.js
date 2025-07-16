@@ -5,7 +5,12 @@ const journalReducer = (state = {}, action) => {
     case 'SET_JOURNAL':
     //    console.log('action .payload', action.payload)
       return action.payload;
+  
+    case 'ADD_JOURNAL_POST':
+
+    return [...state, action.payload];
   }
+
       return state;
   };
 

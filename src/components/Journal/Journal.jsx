@@ -17,11 +17,14 @@ function Journal () {
         console.log('this button will delete the journal post');
     }    
 
-    const [journalPost, setJournalPost] = useState();
+    const [journalPost, setJournalPost] = useState({});
 
     const submit = (event) => {
         event.preventDefault();
-        console.log('submit journal entry');
+       // console.log('submit journal entry');
+
+        dispatch({ type: 'ADD_JOURNAL_POST', payload: journalPost});
+        setJournalPost({id:journalPost.id + 1, title:'', text:''})
     }
 
 
@@ -35,9 +38,19 @@ function Journal () {
          <center><Link to="/user"><button>Home Page</button></Link> </center>
        
         <form onSubmit={submit}>
-            <input placeholder="Title"></input>
+            <input 
+                placeholder="Title"
+                value={journalPost.title}
+            
+            ></input>
             <br/>
-            <input placeholder="Text" style={{ width: '200px', height: '100px' }}></input><button>Submit</button>
+            <input 
+                placeholder="Text" 
+                tyle={{ width: '200px', height: '100px' }}
+                value={journalPost.text}
+                >
+                
+            </input><button>Submit</button>
         </form>
 
         {Array.isArray(journal) &&  journal.map((journal => {
