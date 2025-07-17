@@ -13,11 +13,20 @@ function Journal () {
   
     const journal = useSelector((store)=>store.journalReducer); 
 
-    const [journalPost, setJournalPost] = useState({title:'', text:''});
+    const [journalPost, setJournalPost] = useState({});
 
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
 
+     const handleChange = (event) => {
+        event.preventDefault();
+
+        const title = event.target.title;
+        const text = event.target.text;
+        setJournalPost({...journalPost, title, text})
+
+    }
+    
     const submit = (event) => {
         event.preventDefault();
        // console.log('submit journal entry');
@@ -26,11 +35,7 @@ function Journal () {
         setJournalPost({id: journalPost.id + 1, title:'', text:''})
     }
 
-    const handleChange = (event) => {
-        event.preventDefault();
-        setJournalPost({...journalPost, title: event.target.value, text: event.target.value })
-
-    }
+   
 
     return (
         <>
