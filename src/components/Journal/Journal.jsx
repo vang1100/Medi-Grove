@@ -13,7 +13,10 @@ function Journal () {
   
     const journal = useSelector((store)=>store.journalReducer); 
 
-    const [journalPost, setJournalPost] = useState('');
+    const [journalPost, setJournalPost] = useState({title:'', text:''});
+
+    const [title, setTitle] = useState('');
+    const [text, setText] = useState('');
 
     const submit = (event) => {
         event.preventDefault();
