@@ -8,6 +8,8 @@ const journalReducer = (state = {}, action) => {
   
     case 'ADD_JOURNAL_POST':
 
+    console.log('what is in add journal post...', action.payload)
+
     return [...state, action.payload];
   }
 

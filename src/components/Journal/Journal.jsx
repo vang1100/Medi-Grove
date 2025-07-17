@@ -11,20 +11,16 @@ function Journal () {
     }, [])
 
   
-    const journal = useSelector((store)=>store.journalReducer);
+    const journal = useSelector((store)=>store.journalReducer); 
 
-    const deletePost = () => {
-        console.log('this button will delete the journal post');
-    }    
-
-    const [journalPost, setJournalPost] = useState({});
+    const [journalPost, setJournalPost] = useState('');
 
     const submit = (event) => {
         event.preventDefault();
        // console.log('submit journal entry');
 
         dispatch({ type: 'ADD_JOURNAL_POST', payload: journalPost});
-        setJournalPost({id:journalPost.id + 1, title:'', text:''})
+        setJournalPost({id: journalPost.id + 1, title:'', text:''})
     }
 
 
@@ -50,7 +46,9 @@ function Journal () {
                 value={journalPost.text}
                 >
                 
-            </input><button>Submit</button>
+            </input>
+            
+            <input type="submit" value="submit journal"></input>
         </form>
 
         {Array.isArray(journal) &&  journal.map((journal => {
