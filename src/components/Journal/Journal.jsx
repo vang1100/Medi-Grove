@@ -23,6 +23,11 @@ function Journal () {
         setJournalPost({id: journalPost.id + 1, title:'', text:''})
     }
 
+    const handleChange = (event) => {
+        event.preventDefault();
+        setJournalPost({...journalPost, title: event.target.value, text: event.target.value })
+
+    }
 
     return (
         <>
@@ -36,19 +41,23 @@ function Journal () {
         <form onSubmit={submit}>
             <input 
                 placeholder="Title"
+                type="text"
                 value={journalPost.title}
+                onChange={handleChange}
             
             ></input>
             <br/>
             <input 
                 placeholder="Text" 
-                tyle={{ width: '200px', height: '100px' }}
+                style={{ width: '200px', height: '100px' }}
+                type="text"
                 value={journalPost.text}
+                onChange={handleChange}
                 >
                 
             </input>
             
-            <input type="submit" value="submit journal"></input>
+            <input type="submit" value="Submit"></input>
         </form>
 
         {Array.isArray(journal) &&  journal.map((journal => {
