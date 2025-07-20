@@ -31,7 +31,12 @@ function Journal () {
         event.preventDefault();
        // console.log('submit journal entry');
 
-        dispatch({ type: 'POST_JOURNAL'});
+        dispatch({ type: 'POST_JOURNAL',
+            payload: {
+                title:title,
+                text: text
+            }
+        });
         setTitle('');
         setText('');
     }
