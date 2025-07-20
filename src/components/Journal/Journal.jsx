@@ -89,6 +89,7 @@ function Journal () {
                             payload: journal.id
                             })}>Delete text</button>
                     <button>Edit</button>
+                    
 
                 </li>
             )

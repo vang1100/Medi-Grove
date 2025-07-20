@@ -55,30 +55,25 @@ try {
   }
 }
 
-// function* updateJournal(action) {
-//   try {
+function* updateJournal(action) {
+  try {
 
-//     console.log('edit journal saga');
+    console.log('edit journal saga');
 
-//     yield axios.put(`/api/journal/${action.payload}`)
+    yield axios.put(`/api/journal/${action.payload}`)
 
-//     yield put({
+    yield put({
 
-//       type: 'FETCH_JOURNAL'
-//     });
+      type: 'FETCH_JOURNAL'
+    });
 
-//   }catch(error){
-//     console.log('error in deleteJournal', error)
-//   }
+  }catch(error){
+    console.log('error in deleteJournal', error)
+  }
   
-// }
+}
 
 function* addJournal(action) {
-
-//  const addData = {
-//   title:'test',
-//   text: 'test',
-//  };
 
   try {
 
@@ -86,9 +81,11 @@ function* addJournal(action) {
 
    const addPost = yield axios.post(`/api/journal/`, action.payload);
 
+   // the data you want to send to your API — usually, the new journal entry from your form.
+    // s just an argument containing your form data that you want to POST to the server.
   
    console.log('what is inside addPost', addPost.data);
-   
+
     yield put({
 
       type: 'FETCH_JOURNAL',
@@ -105,6 +102,7 @@ function* journalSaga() {
 yield takeEvery('FETCH_JOURNAL', fetchJournal)
 yield takeEvery('DELETE_JOURNAL', deleteJournal)
 yield takeEvery('POST_JOURNAL', addJournal)
+yield takeEvery('PUT_JOURNAL', updateJournal)
 
 }
 

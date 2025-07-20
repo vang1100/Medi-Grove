@@ -12,9 +12,14 @@ Jul 6 - planning updates
 Journal server
 
 1. add put route ✅
-2. update Journal saga to include all routes
+2. update Journal saga to include all routes ✅
 
 Journal client
 
 1. CRUD 
 2. create component containing: form, buttom, input fields
+
+
+july 20
+
+1. need to add api call for PUT - create a saga function
