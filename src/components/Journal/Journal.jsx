@@ -51,7 +51,7 @@ function Journal () {
             <input 
                 placeholder="Title"
                 type="text"
-                value={journalPost.title}
+                value={title}
                 onChange={(event) => setTitle(event.target.value)}
             
             ></input>
@@ -60,7 +60,7 @@ function Journal () {
                 placeholder="Text" 
                 style={{ width: '200px', height: '100px' }}
                 type="text"
-                value={journalPost.text}
+                value={text}
                 onChange={(event) => setText(event.target.value)}
                 >
                 

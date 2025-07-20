@@ -73,17 +73,24 @@ try {
   
 // }
 
-function* addJournal() {
+function* addJournal(action) {
+
+//  const addData = {
+//   title:'test',
+//   text: 'test',
+//  };
+
   try {
 
     console.log('add journal saga');
 
-   const addPost = yield axios.post(`/api/journal/`);
+   const addPost = yield axios.post(`/api/journal/`, addData);
+
 
     yield put({
 
       type: 'FETCH_JOURNAL',
-      payload: addPost.data
+     
     });
 
   }catch(error){
