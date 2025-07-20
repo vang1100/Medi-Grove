@@ -30,17 +30,16 @@ function UserPage() {
             <p style={{color: 'red'}}>....Under <strong>construction</strong>....</p>
       
     <br/>
-      
+      <Link to="/journal">
+          <button>Go to user journal</button>
+          </Link>
             Welcome, {user.username}!
             
             <p>Your ID is: {user.id}</p>
 
             <h3>Pick a card below</h3>
 
-          <Link to="/journal">
-          <button>Go to user journal</button>
-          </Link>
-          
+         
           
 
 

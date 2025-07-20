@@ -18,21 +18,22 @@ function Journal () {
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
 
-     const handleChange = (event) => {
-        event.preventDefault();
+    //  const handleChange = (event) => {
+    //     event.preventDefault();
 
-        const title = event.target.title;
-        const text = event.target.text;
-        setJournalPost({...journalPost, title, text})
+    //     const title = event.target.title;
+    //     const text = event.target.text;
+    //     setJournalPost({...journalPost, title, text})
 
-    }
+    // }
     
     const submit = (event) => {
         event.preventDefault();
        // console.log('submit journal entry');
 
-        dispatch({ type: 'ADD_JOURNAL_POST', payload: journalPost});
-        setJournalPost({id: journalPost.id + 1, title:'', text:''})
+        dispatch({ type: 'POST_JOURNAL'});
+        setTitle('');
+        setText('');
     }
 
    
@@ -51,7 +52,7 @@ function Journal () {
                 placeholder="Title"
                 type="text"
                 value={journalPost.title}
-                onChange={handleChange}
+                onChange={(event) => setTitle(event.target.value)}
             
             ></input>
             <br/>
@@ -60,7 +61,7 @@ function Journal () {
                 style={{ width: '200px', height: '100px' }}
                 type="text"
                 value={journalPost.text}
-                onChange={handleChange}
+                onChange={(event) => setText(event.target.value)}
                 >
                 
             </input>

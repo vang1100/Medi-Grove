@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { put, takeEvery, select } from 'redux-saga/effects';
+import { put, takeEvery, select, take } from 'redux-saga/effects';
 
 function* fetchJournal() {
   
@@ -73,9 +73,29 @@ try {
   
 // }
 
+function* addJournal() {
+  try {
+
+    console.log('add journal saga');
+
+   const addPost = yield axios.post(`/api/journal/`);
+
+    yield put({
+
+      type: 'FETCH_JOURNAL',
+      payload: addPost.data
+    });
+
+  }catch(error){
+    console.log('error in deleteJournal', error)
+  }
+
+}
+
 function* journalSaga() {
 yield takeEvery('FETCH_JOURNAL', fetchJournal)
 yield takeEvery('DELETE_JOURNAL', deleteJournal)
+yield takeEvery('POST_JOURNAL', addJournal)
 
 }
 
