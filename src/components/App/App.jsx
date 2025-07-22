@@ -24,7 +24,7 @@ import CategoryTwo from '../CategoryTwo/CategoryTwo';
 import CategoryFour from '../CategoryFour/CategoryFour';
 import CategoryThree from '../CategoryThree/CategoryThree';
 import Journal from '../Journal/Journal';
-import EditJournal from '../EditJournal/EditJourna';
+import EditJournal from '../EditJournal/EditJournal';
 
 import './App.css';
 
