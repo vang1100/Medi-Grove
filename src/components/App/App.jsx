@@ -24,6 +24,7 @@ import CategoryTwo from '../CategoryTwo/CategoryTwo';
 import CategoryFour from '../CategoryFour/CategoryFour';
 import CategoryThree from '../CategoryThree/CategoryThree';
 import Journal from '../Journal/Journal';
+import EditJournal from '../EditJournal/EditJourna';
 
 import './App.css';
 
@@ -165,7 +166,11 @@ function App() {
 
             </Route>
 
-          
+          <Route
+            exact
+            patch="/edit">
+                <EditJournal/>
+            </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
 
