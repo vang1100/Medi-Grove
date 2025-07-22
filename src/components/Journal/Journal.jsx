@@ -61,15 +61,15 @@ function Journal () {
             
             ></input>
             <br/>
-            <input 
-                placeholder="Text" 
-                style={{ width: '200px', height: '100px' }}
-                type="text"
+            <textarea
+                
                 value={text}
                 onChange={(event) => setText(event.target.value)}
-                >
                 
-            </input>
+                
+            />
+
+            
             
             <input type="submit" value="Submit"></input>
         </form>
