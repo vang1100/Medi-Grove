@@ -55,24 +55,6 @@ try {
   }
 }
 
-// function* updateJournal(action) {
-//   try {
-
-//     console.log('edit journal saga');
-
-//     yield axios.put(`/api/journal/${action.payload}`)
-
-//     yield put({
-
-//       type: 'FETCH_JOURNAL'
-//     });
-
-//   }catch(error){
-//     console.log('error in deleteJournal', error)
-//   }
-  
-// }
-
 function* addJournal(action) {
 
   try {
@@ -98,11 +80,30 @@ function* addJournal(action) {
 
 }
 
+function* updateJournal(action) {
+  try {
+
+    console.log('edit journal saga');
+
+    yield axios.put(`/api/journal/${action.payload}`)
+
+    yield put({
+
+      type: 'FETCH_JOURNAL'
+    });
+
+  }catch(error){
+    console.log('error in updateJournal', error)
+  }
+  
+}
+
+
 function* journalSaga() {
 yield takeEvery('FETCH_JOURNAL', fetchJournal)
 yield takeEvery('DELETE_JOURNAL', deleteJournal)
 yield takeEvery('POST_JOURNAL', addJournal)
-//yield takeEvery('PUT_JOURNAL', updateJournal)
+yield takeEvery('PUT_JOURNAL', updateJournal)
 
 }
 
