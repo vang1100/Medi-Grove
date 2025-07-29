@@ -1,17 +1,45 @@
-import { useState
+import { useState} from "react";
+import { useDispatch} from 'react-redux';
 
- } from "react";
 function EditForm() {
 
-    const [title, setTtile] = useState('');
+    const [title, setTitle] = useState('');
     const [text, setText] = useState('');
 
-    const edit = () => {
+    const dispatch = useDispatch();
 
+
+
+    const edit = (event) => {
+
+        event.preventDeaulft();
+        dispatch({type: 'PUT_JOURNAL', })
     }
-    
+
     return (
         <>
+         <form onSubmit={edit}>
+            <input 
+                placeholder="Title"
+                type="text"
+                value={title}
+                onChange={(event) => setTitle(event.target.value)}
+            
+            ></input>
+            <br/>
+            <textarea
+                
+                value={text}
+                onChange={(event) => setText(event.target.value)}
+                
+                
+            />
+
+            
+            
+            <input type="submit" value="Submit"></input>
+        </form>
+
         </>
     )
 }

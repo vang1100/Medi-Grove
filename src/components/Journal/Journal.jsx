@@ -88,7 +88,7 @@ function Journal () {
                             ({type: 'DELETE_JOURNAL',
                             payload: journal.id
                             })}>Delete text</button>
-                    <button>Edit</button>
+                   <Link to="/edit-journal"><button>Edit</button></Link> 
                     
 
                 </li>

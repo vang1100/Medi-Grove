@@ -24,6 +24,7 @@ import CategoryTwo from '../CategoryTwo/CategoryTwo';
 import CategoryFour from '../CategoryFour/CategoryFour';
 import CategoryThree from '../CategoryThree/CategoryThree';
 import Journal from '../Journal/Journal';
+import EditForm from '../EditForm/EditForm';
 
 import './App.css';
 
@@ -162,6 +163,13 @@ function App() {
             path="/journal">
 
               <Journal/>
+
+            </Route>
+
+            <Route
+              exact path="/edit-journal">
+
+                <EditForm/>
 
             </Route>
 
