@@ -1,34 +1,49 @@
 import { useState, useEffect} from "react";
 import { useDispatch, useSelector} from 'react-redux';
+import { useParams, Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function EditForm() {
 
-    const journal = useSelector((store)=>store.journalReducer); 
+    const { id } = useParams();
+
+     const journal = useSelector((store)=>store.journalReducer); 
     
 
-    const [title, setTitle] = useState('');
-    const [text, setText] = useState('');
+     const [title, setTitle] = useState('');
+     const [text, setText] = useState('');
 
-    const dispatch = useDispatch();
+     const dispatch = useDispatch();
 
-     useEffect(() =>
-        {
+     // Fetch journal data on mount
+        useEffect(() => {
             dispatch({type:'FETCH_JOURNAL'});
-        }, [])
+}           , 
+                [dispatch]);
+
+    //  useEffect(() =>
+    //     {
+    //         dispatch({type:'FETCH_JOURNAL'});
+    //     }, [])
 
 
-    const edit = (event) => {
+    // const edit = (event) => {
 
-        event.preventDeaulft();
-        dispatch({type: 'PUT_JOURNAL', })
-    }
+    //     event.preventDefault();
+    //     dispatch({type: 'PUT_JOURNAL', })
+    // }
 
     return (
         <>
 
-         {Array.isArray(journal) &&  journal.map((journal => {
+
+\
+
+
+{/* // none of below  works */}
+
+         {/* {Array.isArray(journal) &&  journal.map((journal => {
             return (
-                <li key={journal.id}>
+                <li key={journal.id}> */}
 
                   {/* Title: 
                   {journal.title} 
@@ -37,7 +52,7 @@ function EditForm() {
                   <br/>
                       */}
 
-            <form onSubmit={edit}>
+            {/* <form onSubmit={edit}>
             <input 
                 type="text"
                 value={journal.title}
@@ -59,7 +74,7 @@ function EditForm() {
 
                 </li>
             )
-        }))}
+        }))} */}
 
 
          {/* <form onSubmit={edit}>

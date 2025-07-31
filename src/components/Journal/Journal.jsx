@@ -1,6 +1,7 @@
 import {React, useEffect, useState} from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
-import {useSelector, useDispatch} from 'react-redux';import { Link } from 'react-router-dom/cjs/react-router-dom';
+import {useSelector, useDispatch} from 'react-redux';
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 function Journal () {
 
@@ -13,17 +14,10 @@ function Journal () {
   
     const journal = useSelector((store)=>store.journalReducer); 
 
-    const [journalPost, setJournalPost] = useState({});
 
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
 
-    //  const handleChange = (event) => {
-    //     event.preventDefault();
-
-    //     const title = event.target.title;
-    //     const text = event.target.text;
-    //     setJournalPost({...journalPost, title, text})
 
     // }
     
@@ -88,7 +82,7 @@ function Journal () {
                             ({type: 'DELETE_JOURNAL',
                             payload: journal.id
                             })}>Delete text</button>
-                   <Link to="/edit-journal"><button>Edit</button></Link> 
+                   <Link to={`/edit-journal/${journal.id}`}><button>Edit</button></Link> 
                     
 
                 </li>

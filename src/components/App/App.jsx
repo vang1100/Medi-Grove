@@ -167,7 +167,7 @@ function App() {
             </Route>
 
             <Route
-              exact path="/edit-journal">
+              exact path="/edit-journal/:id" component={EditForm}>
 
                 <EditForm/>
 
