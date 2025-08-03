@@ -4,7 +4,6 @@ import { useParams, Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function EditForm() {
 
-    const { id } = useParams();
 
      const journal = useSelector((store)=>store.journalReducer); 
     
@@ -20,12 +19,7 @@ function EditForm() {
 }           , 
                 [dispatch]);
 
-    useEffect(() => {
-    if (journal && Array.isArray(journal) && journal.length > 0) {
-        setTitle(journal[0].title);
-        setText(journal[0].text);
-    }
-}, [journal]);
+  
 
     //  useEffect(() =>
     //     {
@@ -38,44 +32,32 @@ function EditForm() {
         event.preventDefault();
         dispatch({
             type: 'PUT_JOURNAL',
-            payload: { id: journal[0].id, title, text } })
+           })
     }
 
+ 
     const [editId, setEditId] = useState(null);
-
-const startEdit = (journal) => {
-  setEditId(journal.id);
-  setTitle(journal.title);
-  setText(journal.text);
-}
 
     return (
         <>
 
+{Array.isArray(journal) && journal.map((journal => {
+    return (
+        <li key={journal.id}>
 
-{journal.map(j => (
-      <li key={j.id}>
-        {j.title}
-        <button onClick={() => startEdit(j)}>Edit</button>
-      </li>
-    ))}
-    {editId && (
-      <form onSubmit={edit}>
-        <input
-          type="text"
-          value={title}
-          onChange={e => setTitle(e.target.value)}
-        />
-        <textarea
-            type="text"
-          value={text}
-          onChange={e => setText(e.target.value)}
-        />
-        <input type="submit" value="Submit" />
-      </form>
-    )}
+            <form onSubmit={edit}>
+                <input
+                    type="text"
+                    value={journal.title}
+                    onChange={(event) =>setTitle(event.target.value)}>
+                </input>
 
+                <input type="submit" value="Submit"></input>
+            </form>
 
+        </li>
+    )
+}))}
 
 
 {/* // none of below  works */}
