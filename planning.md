@@ -39,3 +39,22 @@ My questions
  - How do I have PUT on the same page or does it need to separate? I don't understand the basics
  - Prop is confusing me and my old assignmets ony haven it . So what is the old and traditional way of pressing the edit button and it making changes on the current state of the form?
  - How can I just focus on one entry at a time and not the whole list?
+
+
+ 08/03/25
+  1. I am able to map over the form and display the current data
+  2. At the moment it is controlled input fields, so how do I edit them?
+  3. After I figure out how to edit them, how do I make sure that I am just
+  viewing the specfic ID? Like after clicking edit , i want to be directed to that id I clicked on
+
+  - Is my onchange right?
+  - Is the onsubmit working?
+
+  What I know so far:
+  Postman server - put works!
+  I am able to map over and view the current data on the controlled input fields
+
+GOAL
+Aug 4 week : Complete Edit form
+Aug 9 - 10 weekend : Clean up code, add code notes
+Aug 10 week: Add material UI, fix navigation

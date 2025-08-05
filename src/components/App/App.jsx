@@ -25,7 +25,7 @@ import CategoryFour from '../CategoryFour/CategoryFour';
 import CategoryThree from '../CategoryThree/CategoryThree';
 import Journal from '../Journal/Journal';
 import EditForm from '../EditForm/EditForm';
-
+import Practice from '../Practice';
 import './App.css';
 
 function App() {
@@ -170,6 +170,13 @@ function App() {
               exact path="/edit-journal/:id" component={EditForm}>
 
                 <EditForm/>
+
+            </Route>
+
+            <Route
+              exact path="/practice">
+
+                <Practice/>
 
             </Route>
 

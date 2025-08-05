@@ -6,10 +6,11 @@ function EditForm() {
 
 
      const journal = useSelector((store)=>store.journalReducer); 
-    
 
-     const [title, setTitle] = useState('');
-     const [text, setText] = useState('');
+     const [journalList, setJournalList] = useState({
+        title: '',
+        text: ''
+     })
 
      const dispatch = useDispatch();
 
@@ -19,15 +20,8 @@ function EditForm() {
 }           , 
                 [dispatch]);
 
-  
 
-    //  useEffect(() =>
-    //     {
-    //         dispatch({type:'FETCH_JOURNAL'});
-    //     }, [])
-
-
-    const edit = (event) => {
+    const handleSubmit = (event) => {
 
         event.preventDefault();
         dispatch({
@@ -35,21 +29,42 @@ function EditForm() {
            })
     }
 
- 
-    const [editId, setEditId] = useState(null);
+    const handleChange = (event) => {
+     
+    //  const target = event.target;
+    //  const name = event.target.name;
+    //  const value = event.target.value;
+
+    const { name, value } = event.target;
+
+     setJournalList(prevJournalList =>({
+        ...prevJournalList,
+        [name]:value
+     }));
+    }
+
 
     return (
         <>
+{/* at this point, these are controlled inputs and i cannot change it...s
+o what do i need to change in order to edit them? */}
 
 {Array.isArray(journal) && journal.map((journal => {
     return (
         <li key={journal.id}>
 
-            <form onSubmit={edit}>
+            <form onSubmit={handleSubmit}>
+                 <input
+                    type="text"
+                    name="title"
+                    value={journal.title}
+                    onChange={handleChange}>
+                </input>
                 <input
                     type="text"
-                    value={journal.title}
-                    onChange={(event) =>setTitle(event.target.value)}>
+                    name="text"
+                    value={journal.text}
+                    onChange={handleChange}>
                 </input>
 
                 <input type="submit" value="Submit"></input>
@@ -60,65 +75,7 @@ function EditForm() {
 }))}
 
 
-{/* // none of below  works */}
 
-         {/* {Array.isArray(journal) &&  journal.map((journal => {
-            return (
-                <li key={journal.id}> */}
-
-                  {/* Title: 
-                  {journal.title} 
-                  <br/>
-                  {journal.text}
-                  <br/>
-                      */}
-
-            {/* <form onSubmit={edit}>
-            <input 
-                type="text"
-                value={journal.title}
-                onChange={(event) => setTitle(event.target.value)}
-            
-            ></input>
-            <br/>
-            <textarea
-                
-                value={journal.text}
-                onChange={(event) => setText(event.target.value)}
-                
-                
-            />
-
-            
-            <input type="submit" value="Submit"></input>
-        </form>
-
-                </li>
-            )
-        }))} */}
-
-
-         {/* <form onSubmit={edit}>
-            <input 
-                placeholder={journal.title}
-                type="text"
-                value={title}
-                onChange={(event) => setTitle(event.target.value)}
-            
-            ></input>
-            <br/>
-            <textarea
-                
-                value={journal.text}
-                onChange={(event) => setText(event.target.value)}
-                
-                
-            /> */}
-
-            
-            
-            {/* <input type="submit" value="Submit"></input>
-        </form> */}
 
         </>
     )
