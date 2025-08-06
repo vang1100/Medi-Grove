@@ -24,7 +24,7 @@ import CategoryTwo from '../CategoryTwo/CategoryTwo';
 import CategoryFour from '../CategoryFour/CategoryFour';
 import CategoryThree from '../CategoryThree/CategoryThree';
 import Journal from '../Journal/Journal';
-import EditForm from '../EditForm/EditForm';
+import JournalEditPage from '../JournalEditPage/JournalEditPage';
 import Practice from '../Practice';
 import './App.css';
 
@@ -167,9 +167,9 @@ function App() {
             </Route>
 
             <Route
-              exact path="/edit-journal/:id" component={EditForm}>
+              exact path="/edit-journal/:id" component={JournalEditPage}>
 
-                <EditForm/>
+                <JournalEditPage/>
 
             </Route>
 

@@ -16,9 +16,13 @@ function EditForm() {
 
      // Fetch journal data on mount
         useEffect(() => {
-            dispatch({type:'FETCH_JOURNAL'});
-}           , 
-                [dispatch]);
+  if (Array.isArray(journal) && journal.length > 0) {
+    setJournalList({
+      title: journal.title,   // or whatever journal you want to edit
+      text: journal.text
+    });
+  }
+}, [journal]);
 
 
     const handleSubmit = (event) => {
@@ -57,13 +61,13 @@ o what do i need to change in order to edit them? */}
                  <input
                     type="text"
                     name="title"
-                    value={journal.title}
+                    value={journalList.title}
                     onChange={handleChange}>
                 </input>
                 <input
                     type="text"
                     name="text"
-                    value={journal.text}
+                    value={journalList.text}
                     onChange={handleChange}>
                 </input>
 
