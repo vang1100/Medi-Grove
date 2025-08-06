@@ -58,3 +58,10 @@ GOAL
 Aug 4 week : Complete Edit form
 Aug 9 - 10 weekend : Clean up code, add code notes
 Aug 10 week: Add material UI, fix navigation
+
+
+08/06
+1. Able to fix form where I can edit fields
+Solution: 3 components - Edit Page, Edit Items, Edit Form
+2. Able to edit a single entry only
+Solution: Render just one journal entry. -useParams()

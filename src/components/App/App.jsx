@@ -25,7 +25,6 @@ import CategoryFour from '../CategoryFour/CategoryFour';
 import CategoryThree from '../CategoryThree/CategoryThree';
 import Journal from '../Journal/Journal';
 import JournalEditPage from '../JournalEditPage/JournalEditPage';
-import Practice from '../Practice';
 import './App.css';
 
 function App() {
@@ -173,12 +172,7 @@ function App() {
 
             </Route>
 
-            <Route
-              exact path="/practice">
-
-                <Practice/>
-
-            </Route>
+           
 
           
 
