@@ -73,6 +73,7 @@ router.post('/', ensureAuthenticated, (req, res) => {
 });
 
 // DELETE ROUTE
+  
 router.delete('/:id', ensureAuthenticated, (req, res) => {
 
 
