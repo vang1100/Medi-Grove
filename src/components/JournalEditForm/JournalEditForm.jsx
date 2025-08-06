@@ -47,7 +47,7 @@ function JournalEditForm({journal}){
             onChange={handleChange}
             />
 
-            <input type="submit" value="Submit"> </input>
+            <input type="submit" value="Submit"/>
 
         </form>
         </>
