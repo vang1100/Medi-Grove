@@ -26,7 +26,7 @@ function JournalEditPage () {
         {/* Description: overall list/page logic */}
 
         <ul>
-            {journal.map((journal) =>
+            {Array.isArray(journal) && journal.map((journal) =>
             <JournalEditItem key={journal.id} journal={journal}/>)}
         </ul>
 
