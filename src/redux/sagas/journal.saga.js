@@ -83,9 +83,11 @@ function* addJournal(action) {
 function* updateJournal(action) {
   try {
 
+    const { id, ...data } = action.payload;
+
     console.log('edit journal saga');
 
-    yield axios.put(`/api/journal/${action.payload}`)
+    yield axios.put(`/api/journal/${id}`, data);
 
     yield put({
 
