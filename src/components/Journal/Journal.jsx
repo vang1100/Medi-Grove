@@ -47,16 +47,17 @@ function Journal () {
          <center><Link to="/user"><button>Home Page</button></Link> </center>
        
         <form onSubmit={submit}>
-            <input 
+            <textarea 
                 placeholder="Title"
                 type="text"
                 value={title}
                 onChange={(event) => setTitle(event.target.value)}
             
-            ></input>
+            />
             <br/>
             <textarea
-                
+                rows={30} 
+                cols={60}
                 value={text}
                 onChange={(event) => setText(event.target.value)}
                 
