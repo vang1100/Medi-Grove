@@ -166,7 +166,7 @@ function App() {
             </Route>
 
             <Route
-              exact path="/edit-journal/:id" component={JournalEditPage}>
+              exact path="/edit-journal/:id" element={JournalEditPage}>
 
                 <JournalEditPage/>
 
