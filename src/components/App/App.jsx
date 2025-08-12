@@ -26,6 +26,7 @@ import CategoryThree from '../CategoryThree/CategoryThree';
 import Journal from '../Journal/Journal';
 import JournalEditPage from '../JournalEditPage/JournalEditPage';
 import './App.css';
+import CategoryPage from '../CategoryPage/CategoryPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -170,6 +171,11 @@ function App() {
 
                 <JournalEditPage/>
 
+            </Route>
+
+            <Route
+              exact path="/category-page/:id" element={CategoryPage}>
+                <CategoryPage/>
             </Route>
 
            

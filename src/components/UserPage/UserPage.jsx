@@ -27,6 +27,8 @@ function UserPage() {
     <div className="container">
 
        {/* {JSON.stringify(card)} */}
+
+       <Link to="/category-page">test</Link>
             <p style={{color: 'red'}}>....Under <strong>construction</strong>....</p>
       
     <br/>
@@ -44,7 +46,7 @@ function UserPage() {
           
 
 
-          <Link to="/category-one-walking-thoughts">
+          <Link to="/category-page/:id">
         
           < img src="walking-thoughts.png" />
         
