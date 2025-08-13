@@ -1,48 +1,53 @@
 import {useSelector, useDispatch} from 'react-redux';
 import {useEffect, useState} from 'react';
-import { Link } from 'react-router-dom/cjs/react-router-dom';
+import { Link, useParams } from 'react-router-dom/cjs/react-router-dom';
 
 function CategoryItem() {
 
-    // const dispatch = useDispatch();
+    const { id } = useParams();
+
+    const dispatch = useDispatch();
     
-    //     useEffect(() =>
-    //     {
-    //         dispatch({type: 'FETCH_CARD' });
-    //     }, 
-    //         [])
+        useEffect(() =>
+        {
+            dispatch({type: 'FETCH_CARD' });
+        }, 
+            [dispatch])
     
 
-    // const [randomCard, setRandomCard] = useState(null);
+    const [randomCard, setRandomCard] = useState(null);
 
-    // const cards = useSelector((store) =>store.cardReducer);
+    const cards = useSelector((store) =>store.cardReducer);
 
-    // const fetchRandomCard = () => {
-    //     console.log('a random card will display when I press this button!');
+    const fetchRandomCard = () => {
+        console.log('a random card will display when I press this button!');
 
-    //     const filtered = Array.isArray(cards)
+        const filtered = Array.isArray(cards)
 
-    //   ? cards.filter(category => category.category_id === category.category_id)
+      ? cards.filter(category => category.category_id === Number(id))
 
-    //   : [];
+                // grabs id from the URL and uses it to filter only cards 
+                // that belong to that category (card.category_id === Number(id)).
 
-    // if (filtered.length > 0) {
+      : [];
 
-    //     const randomIndex = Math.floor(Math.random() * filtered.length);
+    if (filtered.length > 0) {
 
-    //     setRandomCard(filtered[randomIndex]);
+        const randomIndex = Math.floor(Math.random() * filtered.length);
 
-    // } else {
+        setRandomCard(filtered[randomIndex]);
 
-    //     setRandomCard(null);
-    // }
+    } else {
+
+        setRandomCard(null);
+    }
     
-    // }
+    }
 
     return (
         <>
 
-    {/* <center><button onClick={fetchRandomCard}>Generate Card</button> </center>
+    <center><button onClick={fetchRandomCard}>Generate Card</button> </center>
 
     <ul>
         {randomCard && (
@@ -51,7 +56,7 @@ function CategoryItem() {
             <p>{randomCard.description}</p>
           </li>
         )}
-      </ul> */}
+      </ul>
 
         
         
