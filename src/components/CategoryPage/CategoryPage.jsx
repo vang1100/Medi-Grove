@@ -8,18 +8,18 @@ function CategoryPage() {
 
 
     // const cards = useSelector((store) =>store.cardReducer);
-    const category = useSelector((store) =>store.cateReducer);
+    const category = useSelector((store) =>store.categoryReducer);
 
-     const { id } = useParams(); 
+    //  const { id } = useParams(); 
 
-     const whatCategory = Array.isArray(category) 
-     ? category.find(c => String(c.id) === id)
+    //  const whatCategory = Array.isArray(category) 
+    //  ? category.find(c => String(c.id) === id)
      
-     : null;
+    //  : null;
     
-    if (!whatCategory ) {
-        return <div>Card not found</div>;
-    }
+    // if (!whatCategory ) {
+    //     return <div>Card not found</div>;
+    // }
 
     // const [randomCard, setRandomCard] = useState(null);
 
@@ -48,8 +48,17 @@ function CategoryPage() {
     return (
         <>
       
-  <CategoryItem/>
+ hi 
 
+ {JSON.stringify(category)}
+
+{Array.isArray(category) && category.map((category =>{
+    return(
+        <li key={category.id}>
+            <Link to={`/category-item/${category.id}`}>{category.type} </Link>
+        </li>
+    )
+}))}
 
         </>
         

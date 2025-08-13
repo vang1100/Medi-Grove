@@ -27,6 +27,7 @@ import Journal from '../Journal/Journal';
 import JournalEditPage from '../JournalEditPage/JournalEditPage';
 import './App.css';
 import CategoryPage from '../CategoryPage/CategoryPage';
+import CategoryItem from '../CategoryItem/CategoryItem';
 
 function App() {
   const dispatch = useDispatch();
@@ -174,11 +175,14 @@ function App() {
             </Route>
 
             <Route
-              exact path="/category-page/:id" element={CategoryPage}>
+              exact path="/category-page">
                 <CategoryPage/>
             </Route>
 
-           
+           <Route
+            exact path="/category-item/:id" element={CategoryItem}>
+            <CategoryItem/>
+           </Route>
 
           
 
