@@ -19,10 +19,6 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import CategoryOne from '../CategoryOne/CategoryOne';
-import CategoryTwo from '../CategoryTwo/CategoryTwo';
-import CategoryFour from '../CategoryFour/CategoryFour';
-import CategoryThree from '../CategoryThree/CategoryThree';
 import Journal from '../Journal/Journal';
 import JournalEditPage from '../JournalEditPage/JournalEditPage';
 import './App.css';
@@ -122,42 +118,6 @@ function App() {
               <LandingPage />
             }
           </Route>
-
-   <ProtectedRoute
-              exact 
-              path="/category-one-walking-thoughts">
-
-              <CategoryOne/>
-
-               </ProtectedRoute>
-
-
-    <ProtectedRoute
-              exact 
-              path="/category-two-affirmations">
-
-              <CategoryTwo/>
-
-            </ProtectedRoute>
- 
-
-            
-
-            <Route
-              exact 
-              path="/category-three-tea-meditation">
-
-              <CategoryThree/>
-
-            </Route>
-
-            <Route
-              exact 
-              path="/category-four-earth-messages">
-
-              <CategoryFour/>
-
-            </Route>
 
             <Route
             exact
