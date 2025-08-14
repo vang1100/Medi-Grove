@@ -34,11 +34,17 @@ function UserPage() {
       
     <br/>
     
-      <Link to="/journal">
-          <button>Go to user journal</button>
-          </Link>
+      
             Welcome, {user.username}!
+            <br/>
             
+          <Link to="/journal">
+          
+              <button>Go to user journal</button>
+
+          </Link>
+
+            <br/>
             <p>Your ID is: {user.id}</p>
 
             <h3>Pick a card below</h3>
