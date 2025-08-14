@@ -22,7 +22,8 @@ CREATE TABLE "user" (
  	"id" SERIAL PRIMARY KEY,
  	"category_id" INT REFERENCES "category" (id),
  	"name" 	VARCHAR (200) NOT NULL,
- 	"description" VARCHAR (2000) NOT NULL
+ 	"description" VARCHAR (2000) NOT NULL,
+ 	"is_liked" BOOLEAN DEFAULT FALSE
  	);
  	
  CREATE TABLE "journal" (
@@ -31,13 +32,6 @@ CREATE TABLE "user" (
  	"title" VARCHAR (100) NOT NULL,
  	"text" VARCHAR (5000) NOT NULL
  	);
- 
- CREATE TABLE "user_card_like" (
- 	PRIMARY KEY ("user_id", "card_id"),
- 	"user_id" INT REFERENCES "user" (id),
-    "card_id" INT REFERENCES "card" (id)
-    );
-
 
 INSERT INTO "category" 
 ("type")
@@ -48,23 +42,29 @@ VALUES
 INSERT INTO "card"
 ("category_id", "name", "description")
 VALUES
-('1', 'Embracing Imperfection', 'Nature provides us with such beautiful examples of the brillance inheret in imperfection. There are albino animals, flowers that grow from concree, and an entire crooked forest in Poland. Each of these occurences reminds us that things do not need to be perfect in order to be beautiful valuable, or appreciated. Today as you walk, examime how you may have judged yourself as imperfect, flawed. How can you reframe your relationship with yourself and embrace your imperfections?'),
-('2', 'You Will Bloom', 'From bud to bloom, flowers remind us that they journey of becoming our fullest selves takes time. You cannot rush the blooming process; all you can do is provide water and light and nutrients, and wait for the magnificence to emerge. Today, consider the areas of your life where you are still budding. What can you do to support those buds? When you feel stuck or unsure, remind yourself of the flowers journey and repeat, I will bloom'),
-('3', 'I Love You', 'Holding a warm cup reminds us of the fleeting nature of time and relationships. It encourages us to appreciate the people around us while they are here and embrace the beauty of the present moment. Who do you love today? Who are you grateful for?'),
-('4', 'You Are Your True Nature', 'A tree with no leaves is still a tree. When you dont feel like yourself, when youre going throuugh times of change and loss, remember there is nothing incomplete or inadequate about your being. Nothing can separate you from your true nature.');
+-- Category 1: Embracing Imperfection
+('1', 'Cracks Let the Light In', 'Kintsugi, the Japanese art of mending broken pottery with gold, teaches us that our scars can become our greatest beauty. Today, reflect on a challenge you have faced that left a visible or invisible mark. How might that “crack” be a source of strength, wisdom, or light in your life?'),
+('1', 'Wabi-Sabi Wonder', 'Wabi-sabi is the appreciation of the imperfect, impermanent, and incomplete. Notice a stone path, a chipped mug, or a weathered piece of wood. What story does its imperfection tell? Can you extend the same appreciation to yourself?'),
+('1', 'Uneven Paths', 'A hiking trail is rarely perfectly straight — it twists, climbs, and dips. These variations make the journey more interesting. Consider how the unexpected turns in your life have shaped you. What has an uneven path taught you?'),
+('1', 'The Beauty of Weathered Hands', 'Hands that have worked, created, and cared are often marked with lines, calluses, and scars. These signs tell a story of love, effort, and living fully. What “weathered” parts of you tell your story?'),
 
-SELECT "type", "name", "description", "is_liked" FROM "card"
-JOIN "category" ON "category"."id" = "card"."category_id";
+-- Category 2: You Will Bloom
+('2', 'Seasons of Growth', 'Some seasons call us to plant seeds, others to rest, and still others to bloom. Which season of growth are you in today? How can you honor the pace your soul is asking for?'),
+('2', 'Roots Before Roses', 'A flower’s beauty is only possible because of its strong, unseen roots. What roots are you growing in your life right now — skills, values, relationships — that will sustain your future bloom?'),
+('2', 'The Waiting Garden', 'A garden does not bloom all at once. Some plants take weeks, others years. Consider the parts of your life that may simply need more time. Can you wait with patience and trust?'),
+('2', 'Opening to the Sun', 'A sunflower follows the sun across the sky, opening fully each morning. What “light” do you need to turn toward today? What warms and nourishes your spirit?'),
 
-SELECT * FROM "journal";
+-- Category 3: I Love You
+('3', 'Love in the Little Things', 'Sometimes love shows up in a warm cup of tea, a shared laugh, or a thoughtful message. Who has shown you love in a quiet, everyday way? How can you offer that love back?'),
+('3', 'Gratitude Threads', 'Every relationship is woven from small threads of kindness, patience, and joy. Who are the people whose threads are part of your life’s tapestry?'),
+('3', 'The Gift of Presence', 'To say “I love you” can be as simple as giving someone your full attention. Who can you be truly present with today?'),
+('3', 'Ripples of Love', 'A kind word can ripple out far beyond the moment. What words of love have you received that still echo in your heart?'),
 
-SELECT * FROM "card";
-
-SELECT * FROM "category";
-
-SELECT "type", "name", "description"
-FROM "category" JOIN "card"
-ON "category"."id" = "card"."category_id";
+-- Category 4: You Are Your True Nature
+('4', 'Still the Mountain', 'A mountain does not lose its essence when hidden by clouds. Even in foggy moments, you remain who you are. When life feels unclear, what inner truths remain solid for you?'),
+('4', 'Ocean Without End', 'The ocean is still the ocean whether calm or stormy. How can you remember that your worth is constant, regardless of your current emotional weather?'),
+('4', 'The Leaf and the Tree', 'A single leaf may change colors and fall, but it remains part of the tree’s life. How have your changes still reflected your deeper self?'),
+('4', 'Sky Beyond the Storm', 'No matter how fierce the storm, the sky above is vast and unchanging. What part of you remains peaceful and steady despite life’s turbulence?');
 
 
 

@@ -65,3 +65,9 @@ Aug 10 week: Add material UI, fix navigation
 Solution: 3 components - Edit Page, Edit Items, Edit Form
 2. Able to edit a single entry only
 Solution: Render just one journal entry. -useParams()
+
+0813
+
+1. add notes to code
+2. edit database
+3. start on UI stuff

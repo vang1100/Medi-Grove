@@ -73,8 +73,8 @@ function Journal () {
             return (
                 <li key={journal.id}>
 
-                  Title: 
-                  {journal.title} 
+                  
+                  <h3>{journal.title} </h3>
                   <br/>
                   {journal.text}
                   <br/>
