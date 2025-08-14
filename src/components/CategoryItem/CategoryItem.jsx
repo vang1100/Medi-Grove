@@ -5,6 +5,12 @@ import { Link, useParams } from 'react-router-dom/cjs/react-router-dom';
 function CategoryItem() {
 
     const { id } = useParams();
+// useParams() is a React Router hook that lets you access values from the current URL path that match a route’s parameter pattern.
+        // in other words useParams() hook in React Router only returns the parameters that are defined as dynamic segments in your route's path.
+                // so because my path was "/category-item/:id", useParams(); pulls the ID only aka returns { id: 5 }
+//  { id } pulls the id property out of that returned object, 
+        // so now you have easy access to the id value directly as a variable in your code.
+        // it's just the value
 
     const dispatch = useDispatch();
     
@@ -24,10 +30,18 @@ function CategoryItem() {
 
         const filtered = Array.isArray(cards)
 
-      ? cards.filter(category => category.category_id === Number(id))
+        // check if cards an array and if true
+
+      ? cards.filter(card => card.category_id === Number(id))
+
+      // filter through card
+      // iterirate through each element inside the array card, 
+      // and if the category_id = the number of that id, return the new array of those elements
 
                 // grabs id from the URL and uses it to filter only cards 
                 // that belong to that category (card.category_id === Number(id)).
+                // Number(id) turns the VALUE of that ID into a number.
+                        // for example id = value of 5. Number(5) = turns into 5 a real number
 
       : [];
 

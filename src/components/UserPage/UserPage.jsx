@@ -3,6 +3,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import CategoryPage from '../CategoryPage/CategoryPage';
 
 function UserPage() {
 
@@ -28,7 +29,7 @@ function UserPage() {
 
        {/* {JSON.stringify(card)} */}
 
-       <Link to="/category-page">test</Link>
+       
             <p style={{color: 'red'}}>....Under <strong>construction</strong>....</p>
       
     <br/>
@@ -42,11 +43,12 @@ function UserPage() {
 
             <h3>Pick a card below</h3>
 
+            <CategoryPage/>
          
           
 
 
-          <Link to="/category-page/:id">
+          {/* <Link to="/category-page/:id">
         
           < img src="walking-thoughts.png" />
         
@@ -77,7 +79,7 @@ function UserPage() {
           
           <img src="earths-messages.png"/>
         
-        </Link>
+        </Link> */}
       
     <br/>
   <br/>

@@ -14,9 +14,9 @@ function CategoryPage() {
     return (
         <>
       
- hi 
+ {/* hi 
 
- {JSON.stringify(category)}
+ {JSON.stringify(category)} */}
 
 {Array.isArray(category) && category.map((category =>{
     return(
