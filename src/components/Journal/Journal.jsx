@@ -13,6 +13,7 @@ function Journal () {
 
   
     const journal = useSelector((store)=>store.journalReducer); 
+    const user = useSelector((store) => store.user);
 
 
     const [title, setTitle] = useState('');
@@ -48,13 +49,15 @@ function Journal () {
     return (
         <>
 
-        This is the journal page!
+<h1>{user.username}'s Journal</h1>
+        
 {/* 
         {JSON.stringify(journal)} */}
 
-         <center><Link to="/user"><button>Home Page</button></Link> </center>
+         <center><Link to="/user"><button>Home Page</button></Link> <Link to="/create-post"><button>Create Post</button></Link></center>
+
        
-        <form onSubmit={submit}>
+        {/* <form onSubmit={submit}>
             <textarea 
                 placeholder="Title"
                 type="text"
@@ -75,7 +78,7 @@ function Journal () {
             
             
             <input type="submit" value="Submit"></input>
-        </form>
+        </form> */}
 
         {Array.isArray(journal) &&  journal.map((journal => {
             return (

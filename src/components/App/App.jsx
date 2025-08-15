@@ -24,6 +24,7 @@ import JournalEditPage from '../JournalEditPage/JournalEditPage';
 import './App.css';
 import CategoryPage from '../CategoryPage/CategoryPage';
 import CategoryItem from '../CategoryItem/CategoryItem';
+import CreateJournalPost from '../CreateJournalPost/CreateJournalPost';
 
 function App() {
   const dispatch = useDispatch();
@@ -144,6 +145,10 @@ function App() {
             <CategoryItem/>
            </Route>
 
+          <Route
+          exact path="/create-post">
+            <CreateJournalPost/>
+          </Route>
           
 
           {/* If none of the other routes matched, we will show a 404. */}
