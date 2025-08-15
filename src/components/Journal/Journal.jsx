@@ -78,6 +78,7 @@ function Journal () {
                   <br/>
                   {journal.text}
                   <br/>
+                  {journal.date}
                     <button onClick={() => 
                         dispatch
                             ({type: 'DELETE_JOURNAL',

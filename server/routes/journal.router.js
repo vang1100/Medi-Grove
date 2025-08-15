@@ -47,23 +47,23 @@ router.post('/', ensureAuthenticated, (req, res) => {
     const user_id = req.user.id;
     const title = req.body.title;
     const text = req.body.text;
-    const date = req.body.date;
+   // const date = req.body.date;
 
     const queryText = `
    
               INSERT INTO "journal"
 
-                ("user_id", "title", "text", "date")
+                ("user_id", "title", "text")
                 
               VALUES
 
-                ($1, $2, $3, $4)
+                ($1, $2, $3)
 
                 RETURNING *;
 
     `;
 
-      pool.query(queryText, [user_id, title, text, date])
+      pool.query(queryText, [user_id, title, text])
     .then((result) => {
       res.status(201).send(result.rows[0]); // Send back the new journal entry
     })
