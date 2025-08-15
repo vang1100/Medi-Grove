@@ -36,7 +36,15 @@ function Journal () {
     }
 
    
-
+ const formatDate = (dateString) => {
+            const date = new Date(dateString);
+            return new Intl.DateTimeFormat('en-US', {
+            // these options arguments will give more customization
+              year: 'numeric', // Display the year as a number (e.g., 2023)
+              month: 'long', // Display the full name of the month (e.g., "January")
+              day: 'numeric', // Display the day of the month as a number (e.g., 1)
+            }).format(date);
+          };
     return (
         <>
 
@@ -75,10 +83,11 @@ function Journal () {
 
                   
                   <h3>{journal.title} </h3>
+                  <h5>{formatDate(journal.date)}</h5>
                   <br/>
                   {journal.text}
                   <br/>
-                  {journal.date}
+                  
                     <button onClick={() => 
                         dispatch
                             ({type: 'DELETE_JOURNAL',

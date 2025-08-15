@@ -48,6 +48,8 @@ router.post('/', ensureAuthenticated, (req, res) => {
     const title = req.body.title;
     const text = req.body.text;
    // const date = req.body.date;
+      //PostgreSQL will auto-fill the date with the current time if you do not supply a value at all 
+      //Omit date from sql
 
     const queryText = `
    
