@@ -2,6 +2,7 @@ import {React, useEffect, useState} from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
+import Box from '@mui/material/Box';
 
 function Journal () {
 
@@ -88,7 +89,15 @@ function Journal () {
                   <h3>{journal.title} </h3>
                   <h5>{formatDate(journal.date)}</h5>
                   <br/>
-                  {journal.text}
+                  <Box
+                    component="section" 
+                    sx={{ p: 2, 
+                        border: '1px dashed black', 
+                        width: 100,
+                        height: 100, }}
+                    >
+                        {journal.text}</Box>
+        
                   <br/>
                   
                     <button onClick={() => 
