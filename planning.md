@@ -71,3 +71,8 @@ Solution: Render just one journal entry. -useParams()
 1. add notes to code
 2. edit database
 3. start on UI stuff
+
+What material UI things do I want to add?
+
+1. Journal
+    Text/box style

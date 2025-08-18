@@ -1,9 +1,11 @@
 import { useState} from 'react';
 import { useDispatch} from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 function JournalEditForm({journal}){
 
     const dispatch = useDispatch();
+     const history = useHistory();
 
     const [journalFormData, setJournalFormData] = useState({
             id: journal.id,
@@ -25,7 +27,9 @@ function JournalEditForm({journal}){
         dispatch({
             type: 'PUT_JOURNAL',
             payload: journalFormData
-        })
+        });
+
+         history.push('/journal');
     }
     return (
         <>
@@ -48,7 +52,7 @@ function JournalEditForm({journal}){
             />
 
             <input type="submit" value="Submit"/>
-
+            
         </form>
         </>
     )
