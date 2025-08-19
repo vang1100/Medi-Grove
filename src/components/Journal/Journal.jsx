@@ -17,25 +17,25 @@ function Journal () {
     const user = useSelector((store) => store.user);
 
 
-    const [title, setTitle] = useState('');
-    const [text, setText] = useState('');
+    // const [title, setTitle] = useState('');
+    // const [text, setText] = useState('');
 
 
     // }
     
-    const submit = (event) => {
-        event.preventDefault();
-       // console.log('submit journal entry');
+    // const submit = (event) => {
+    //     event.preventDefault();
+    //    // console.log('submit journal entry');
 
-        dispatch({ type: 'POST_JOURNAL',
-            payload: {
-                title:title,
-                text: text
-            }
-        });
-        setTitle('');
-        setText('');
-    }
+    //     dispatch({ type: 'POST_JOURNAL',
+    //         payload: {
+    //             title:title,
+    //             text: text
+    //         }
+    //     });
+    //     setTitle('');
+    //     setText('');
+    // }
 
    
  const formatDate = (dateString) => {

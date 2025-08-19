@@ -1,15 +1,19 @@
 import {React, useEffect, useState} from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
-import { Link } from 'react-router-dom/cjs/react-router-dom';
+import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom';
 
 function CreateJournalPost(){
+    
+        const history = useHistory();
 
       const dispatch = useDispatch();
         useEffect(() =>
         {
             dispatch({type:'FETCH_JOURNAL'});
-        }, [])
+        },
+        
+        [])
 
         const journal = useSelector((store)=>store.journalReducer); 
         const user = useSelector((store) => store.user);
@@ -33,6 +37,9 @@ function CreateJournalPost(){
             });
             setTitle('');
             setText('');
+            history('/journal');
+
+           //history.push('/journal');
         }
 
 
