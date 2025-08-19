@@ -97,11 +97,16 @@ function Journal () {
                     
                     sx={{   p: 2,
                             border: '1px solid black',
-                            width: 300,
-                            height: 300,
+                            width: 400,
+                            height: 400,
                             overflow: 'auto',
-                            whiteSpace: 'normal',
-                            wordBreak: 'break-word', }}
+
+                            whiteSpace: 'pre-wrap',  // preserves spaces, line breaks, and wraps text
+                            wordBreak: 'break-word', // breaks long words to prevent overflow
+
+                            fontFamily: 'inherit',   // optional: keep font consistent
+                            fontSize: '1rem',        // optional: better readability
+                            textIndent: '1.5em', }}
                     >
                         {journal.text}</Box>
         
