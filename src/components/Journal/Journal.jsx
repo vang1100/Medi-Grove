@@ -3,6 +3,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 import Box from '@mui/material/Box';
+import './Journal.css';
 
 function Journal () {
 
@@ -83,18 +84,24 @@ function Journal () {
 
         {Array.isArray(journal) &&  journal.map((journal => {
             return (
-                <li key={journal.id}>
+                
 
-                  
-                  <h3>{journal.title} </h3>
+                  <div className="box-style">
+                    <li key={journal.id}>
+                        <h3>{journal.title} </h3>
                   <h5>{formatDate(journal.date)}</h5>
                   <br/>
                   <Box
-                    component="section" 
-                    sx={{ p: 2, 
-                        border: '1px dashed black', 
-                        width: 100,
-                        height: 100, }}
+                  
+                    component="section"
+                    
+                    sx={{   p: 2,
+                            border: '1px solid black',
+                            width: 300,
+                            height: 300,
+                            overflow: 'auto',
+                            whiteSpace: 'normal',
+                            wordBreak: 'break-word', }}
                     >
                         {journal.text}</Box>
         
@@ -109,6 +116,8 @@ function Journal () {
                     
 
                 </li>
+                  </div>
+                  
             )
         }))}
         </>

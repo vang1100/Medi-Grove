@@ -1,0 +1,5 @@
+.box-style {
+  list-style-type: none;  /* Removes bullet points */
+  margin: 0;              /* Optional: removes default margin */
+  padding: 0;             /* Optional: removes default padding */
+}

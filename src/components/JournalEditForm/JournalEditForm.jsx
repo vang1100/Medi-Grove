@@ -37,14 +37,19 @@ function JournalEditForm({journal}){
 
         <form onSubmit={handleSubmit}>
 
-            <input
+            <textarea
             type="text"
             name="title"
             value={journalFormData.title}
             onChange={handleChange}
             />
 
-            <input
+            <br/>
+            <br/>
+
+            <textarea
+            rows={30} 
+            cols={60}
             type="text"
             name="text"
             value={journalFormData.text}
