@@ -20,7 +20,7 @@ function CategoryPage() {
 
 {Array.isArray(category) && category.map((category =>{
     return(
-        <li key={category.id}>
+        <li className="box-style" key={category.id}>
             <Link to={`/category-item/${category.id}`}>{category.type} </Link>
         </li>
     )

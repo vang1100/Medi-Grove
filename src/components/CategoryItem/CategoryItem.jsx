@@ -63,7 +63,7 @@ function CategoryItem() {
 
     <center><button onClick={fetchRandomCard}>Generate Card</button> </center>
 
-    <ul>
+    <ul className="box-style">
         {randomCard && (
           <li key={randomCard.id}>
             <h3>{randomCard.name}</h3>
