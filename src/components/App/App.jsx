@@ -25,6 +25,7 @@ import './App.css';
 import CategoryPage from '../CategoryPage/CategoryPage';
 import CategoryItem from '../CategoryItem/CategoryItem';
 import CreateJournalPost from '../CreateJournalPost/CreateJournalPost';
+import Cards from '../Cards/Cards';
 
 function App() {
   const dispatch = useDispatch();
@@ -150,6 +151,10 @@ function App() {
             <CreateJournalPost/>
           </Route>
           
+          <Route
+          exact path="/liked-cards">
+            <Cards/>
+          </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
 

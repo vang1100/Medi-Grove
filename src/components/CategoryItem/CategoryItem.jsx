@@ -68,6 +68,7 @@ function CategoryItem() {
           <li key={randomCard.id}>
             <h3>{randomCard.name}</h3>
             <p>{randomCard.description}</p>
+            <button>Like/Unlike</button>
           </li>
         )}
       </ul>
