@@ -38,5 +38,30 @@ router.get('/', (req, res) => {
         })
 });
 
+// PUT - to like and unlike
+
+router.put('/:id', (req, res) => {
+
+    let {id} = req.params;
+
+    const sqlText = `
+
+            UPDATE "card" SET "is_liked" = NOT "is_liked"
+            WHERE "id" = $1;
+    
+    `;
+
+    pool.query(sqlText, [id])
+        .then((result)=> {
+            console.log('got stuff back from data base', result);
+            res.sendStatus(201);
+        })
+        .catch((error) =>{
+        console.log(`Error making database query `, error);
+          res.sendStatus(500); // Good server always responds
+        }) 
+            
+});
+
 
 module.exports = router;
