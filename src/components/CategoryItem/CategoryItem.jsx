@@ -57,7 +57,10 @@ function CategoryItem() {
     }
     
     }
-
+    
+    const toggleCard = (id) => {
+        dispatch({ type: 'UPDATE_CARD'})
+    }
     return (
         <>
 
@@ -68,7 +71,7 @@ function CategoryItem() {
           <li key={randomCard.id}>
             <h3>{randomCard.name}</h3>
             <p>{randomCard.description}</p>
-            <button>Like/Unlike</button>
+            <button onClick={toggleCard}>Like</button>
           </li>
         )}
       </ul>

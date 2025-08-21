@@ -6,6 +6,7 @@ import CategoryItem from '../CategoryItem/CategoryItem';
 
 function CategoryPage() {
 
+   
 
     const category = useSelector((store) =>store.categoryReducer);
 
