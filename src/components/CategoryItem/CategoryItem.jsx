@@ -58,7 +58,7 @@ function CategoryItem() {
     
     }
     
-    const toggleCard = (id) => {
+    const toggleCard = () => {
         dispatch({ type: 'UPDATE_CARD'})
     }
     return (

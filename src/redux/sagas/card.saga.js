@@ -35,11 +35,11 @@ function* updateCard(action) {
         // For each key except "id", copy the property into data.
   try {
 
-    const { id, ...data } = action.payload;
+    const id = action.payload.id;
 
     console.log('edit journal saga');
 
-    yield axios.put(`/api/cards/${id}`, data);
+    yield axios.put(`/api/cards/${id}`);
 
         //  Because PUT requests typically update a resource with multiple fields, so the server expects:
 
@@ -49,7 +49,7 @@ function* updateCard(action) {
 
     yield put({
 
-      type: 'SET_CARD'
+      type: 'FETCH_CARD'
     });
 
   }catch(error){
