@@ -59,7 +59,10 @@ function CategoryItem() {
     }
     
     const toggleCard = () => {
-        dispatch({ type: 'UPDATE_CARD'})
+        dispatch({ type: 'UPDATE_CARD', 
+        payload: { id: randomCard.id } 
+
+        });
     }
     return (
         <>
