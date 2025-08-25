@@ -74,7 +74,7 @@ function CategoryItem() {
           <li key={randomCard.id}>
             <h3>{randomCard.name}</h3>
             <p>{randomCard.description}</p>
-            <button onClick={toggleCard}>Like</button>
+            <button onClick={toggleCard}>{randomCard.is_liked ? 'Unlike' : 'Like'}</button>
           </li>
         )}
       </ul>
