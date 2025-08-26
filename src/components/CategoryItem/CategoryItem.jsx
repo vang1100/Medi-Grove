@@ -23,7 +23,7 @@ function CategoryItem() {
 
     const [randomCard, setRandomCard] = useState(null);
 
-    const [toggle, setToggle] = useState(false)
+    const [toggle, setToggle] = useState(true)
 
     const cards = useSelector((store) =>store.cardReducer);
 
@@ -60,12 +60,19 @@ function CategoryItem() {
     
     }
     
-    const likeCard = () => {
-        dispatch({ type: 'UPDATE_CARD', 
-        payload: { id: randomCard.id } 
+    // const likeCard = () => {
+    //     dispatch({ type: 'UPDATE_CARD', 
+    //     payload: { id: randomCard.id } 
 
-        });
-    }
+    //     });
+    // }
+
+    const handleChange = () => {
+        dispatch({ type: 'UPDATE_CARD', 
+        payload: { id: randomCard.id } });
+
+        return setToggle(!toggle);
+      }
 
     return (
         <>
@@ -77,7 +84,7 @@ function CategoryItem() {
           <li key={randomCard.id}>
             <h3>{randomCard.name}</h3>
             <p>{randomCard.description}</p>
-            <button onClick={likeCard}>{toggle ? 'Like' : 'Unlike'}</button>
+            <button onClick={handleChange}>{toggle ? 'Like' : 'Unlike'}</button>
           </li>
         )}
       </ul>
