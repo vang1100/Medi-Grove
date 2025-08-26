@@ -16,18 +16,17 @@ function Cards() {
 
     return (
         <>
-        This is where the liked cards will appear
+        
         {/* {JSON.stringify(card)} */}
 
-        {Array.isArray(card) && card
-            .filter(card => card.is_liked === true)
+        {Array.isArray(card) && card.filter(card => card.is_liked === true)
             .map(card => (
-            <li key={card.id}>
+            <li key={card.id} className="box-style">
 
       {/* Display card info here */}
       
-      <h3>{card.name}</h3>
-      <p>{card.description}</p>
+            <h3>{card.name}</h3>
+            <p>{card.description}</p>
     </li>
             
             ))}
