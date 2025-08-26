@@ -23,6 +23,8 @@ function CategoryItem() {
 
     const [randomCard, setRandomCard] = useState(null);
 
+    const [toggle, setToggle] = useState(false)
+
     const cards = useSelector((store) =>store.cardReducer);
 
     const fetchRandomCard = () => {
@@ -58,12 +60,13 @@ function CategoryItem() {
     
     }
     
-    const toggleCard = () => {
+    const likeCard = () => {
         dispatch({ type: 'UPDATE_CARD', 
         payload: { id: randomCard.id } 
 
         });
     }
+
     return (
         <>
 
@@ -74,7 +77,7 @@ function CategoryItem() {
           <li key={randomCard.id}>
             <h3>{randomCard.name}</h3>
             <p>{randomCard.description}</p>
-            <button onClick={toggleCard}>{randomCard.is_liked ? 'Unlike' : 'Like'}</button>
+            <button onClick={likeCard}>{toggle ? 'Like' : 'Unlike'}</button>
           </li>
         )}
       </ul>
