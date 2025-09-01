@@ -19,7 +19,14 @@ function Cards() {
         
         {/* {JSON.stringify(card)} */}
 
-        {Array.isArray(card) && card.filter(card => card.is_liked === true)
+        {Array.isArray(card)
+        // Array.isArray checks if the passed value is an array
+         && 
+        // && operator will return if true. so if card is an array and then return....
+        card.filter(card => card.is_liked === true)
+
+        //card.filter will create a new aray from the filtered out elements
+        // card => card.is_liked ==== true so only grab the elements where is_liked === true and make a new array out of it
             .map(card => (
             <li key={card.id} className="box-style">
 
