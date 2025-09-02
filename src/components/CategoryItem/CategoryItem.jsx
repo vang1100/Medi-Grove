@@ -19,6 +19,23 @@ function CategoryItem() {
             dispatch({type: 'FETCH_CARD' });
         }, 
             [dispatch])
+
+            // useEffect(() => {
+                 /* effect code goes here */
+
+                    // Fetching data (API calls, Redux dispatches)
+
+                    // Setting up timers or subscriptions
+
+                    // Manipulating the DOM
+
+                    // Logging
+          //}, 
+                  // []
+                  // this is where the dependecy goes in 
+                  // React “watches” these variables:
+                  // If any value inside changes, it re-runs the effect.
+          //  );
     
 
     const [randomCard, setRandomCard] = useState(null);
