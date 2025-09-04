@@ -30,7 +30,7 @@ function UserPage() {
        {/* {JSON.stringify(card)} */}
 
        
-            <p style={{color: 'red'}}>....Under <strong>construction</strong>....</p>
+            {/* <p style={{color: 'red'}}>....Under <strong>construction</strong>....</p> */}
       
     <br/>
     
