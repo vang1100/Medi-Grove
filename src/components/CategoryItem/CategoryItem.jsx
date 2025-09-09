@@ -1,6 +1,7 @@
 import {useSelector, useDispatch} from 'react-redux';
 import {useEffect, useState} from 'react';
 import { Link, useParams } from 'react-router-dom/cjs/react-router-dom';
+import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
 
 function CategoryItem() {
 
@@ -101,7 +102,8 @@ function CategoryItem() {
           <li key={randomCard.id}>
             <h3>{randomCard.name}</h3>
             <p>{randomCard.description}</p>
-            <button onClick={handleChange}>{toggle ? 'Like' : 'Unlike'}</button>
+            <div onClick={handleChange}>{toggle ? <FavoriteTwoToneIcon/> : <FavoriteTwoToneIcon style={{ color: 'red' }} />}</div>
+            
           </li>
         )}
       </ul>
