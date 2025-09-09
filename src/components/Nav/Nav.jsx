@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
+import HomeTwoToneIcon from '@mui/icons-material/HomeTwoTone';
+import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
+import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
+import LogoutTwoToneIcon from '@mui/icons-material/LogoutTwoTone';
 
 function Nav() {
   const user = useSelector((store) => store.user);
@@ -25,24 +29,24 @@ function Nav() {
         {user.id && (
           <>
             <Link className="navLink" to="/user">
-              Home
+              <HomeTwoToneIcon/>
             </Link>
 
             <Link className="navLink" to="/journal">
-              Journal
+              <EditTwoToneIcon/>
             </Link>
 
             <Link className="navLink" to="/liked-cards">
-            Favorite Page
+            <FavoriteTwoToneIcon/>
             </Link>
 
             <LogOutButton className="navLink" />
           </>
         )}
 
-        <Link className="navLink" to="/about">
+        {/* <Link className="navLink" to="/about">
           About
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
