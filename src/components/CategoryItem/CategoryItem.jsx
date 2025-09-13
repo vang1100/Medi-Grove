@@ -2,6 +2,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {useEffect, useState} from 'react';
 import { Link, useParams } from 'react-router-dom/cjs/react-router-dom';
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
+import CreateJournalPost from '../CreateJournalPost/CreateJournalPost';
 
 function CategoryItem() {
 
@@ -109,6 +110,7 @@ function CategoryItem() {
       </ul>
 
         
+        <CreateJournalPost/>
         
         <center><Link to="/user"><button>Home Page</button></Link> </center>
         </>
