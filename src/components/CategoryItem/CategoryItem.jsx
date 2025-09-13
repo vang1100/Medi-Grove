@@ -44,6 +44,8 @@ function CategoryItem() {
 
     const [toggle, setToggle] = useState(true)
 
+    const [togglePost, setTogglePost] = useState(true)
+
     const cards = useSelector((store) =>store.cardReducer);
 
     const fetchRandomCard = () => {
@@ -93,6 +95,10 @@ function CategoryItem() {
         return setToggle(!toggle);
       }
 
+    const togglePostJournal = () => {
+      return setTogglePost(!togglePost);
+    }
+
     return (
         <>
 
@@ -100,17 +106,36 @@ function CategoryItem() {
 
     <ul className="box-style">
         {randomCard && (
-          <li key={randomCard.id}>
-            <h3>{randomCard.name}</h3>
+          <li key={randomCard.id}> 
+            {/* <div onClick={handleChange}>{toggle ? <FavoriteTwoToneIcon/> : <FavoriteTwoToneIcon style={{ color: 'red' }} />} <h3>{randomCard.name}</h3></div> */}
+            
+
+            {/* display: flex and alignItems: center put the text and icon side by side, vertically aligned.
+
+            gap: 8 or marginLeft: 8 adds a little space between them.
+
+            Wrapping the icon in a <span> allows for inline positioning and pointer behavior. */}
+            
+            
+            <h3 style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                {randomCard.name}
+                  <span onClick={handleChange} style={{ cursor: 'pointer', marginLeft: 8 }}>
+                {toggle 
+                    ? <FavoriteTwoToneIcon /> 
+                    : <FavoriteTwoToneIcon style={{ color: 'red' }} />}
+                  </span>
+          </h3>
             <p>{randomCard.description}</p>
-            <div onClick={handleChange}>{toggle ? <FavoriteTwoToneIcon/> : <FavoriteTwoToneIcon style={{ color: 'red' }} />}</div>
+            
             
           </li>
         )}
       </ul>
 
+        <button onClick={togglePostJournal}>Create Post</button>
+
+        {togglePost ? '' : <CreateJournalPost/> }
         
-        <CreateJournalPost/>
         
         <center><Link to="/user"><button>Home Page</button></Link> </center>
         </>

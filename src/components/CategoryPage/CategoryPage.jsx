@@ -15,14 +15,11 @@ function CategoryPage() {
     return (
         <>
       
- {/* hi 
-
- {JSON.stringify(category)} */}
 
 {Array.isArray(category) && category.map((category =>{
     return(
         <li className="box-style" key={category.id}>
-            <Link to={`/category-item/${category.id}`}>{category.type}<br/><img src={category.img}/></Link>
+            <h2>{category.type}</h2><Link to={`/category-item/${category.id}`}><br/><img src={category.img}/></Link>
         </li>
     )
 }))}

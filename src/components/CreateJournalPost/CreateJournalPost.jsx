@@ -63,9 +63,10 @@ function CreateJournalPost(){
                 
             />
 
-            <input type="submit" value="Submit"></input>
+           <br/> 
+           <input type="submit" value="Submit"></input>
             
-            <Link to="/journal">Back to Journal</Link>
+           <Link to="/journal"><button>Back to Journal</button></Link>
         </form>
         </>
     )
