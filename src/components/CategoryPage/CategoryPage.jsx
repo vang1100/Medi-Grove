@@ -15,6 +15,7 @@ function CategoryPage() {
     return (
         <>
       
+      
 
 {Array.isArray(category) && category.map((category =>{
     return(
